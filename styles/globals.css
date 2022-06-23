@@ -1,11 +1,30 @@
 /* font set */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
 @font-face {
   font-family: "Ginger";
-  src: url("../fonts/Ginger.ttf");
+  src: url("../fonts/Ginger.otf");
+}
+.SpaceFont {
+  font-family: "Space Grotesk", sans-serif !important;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Ginger", cursive !important;
+  color: white !important;
+}
+
+body {
+  background-color: #060606;
+}
+span.important-word {
+  color: #7176eb !important;
+}
+
+.margin-left {
+  margin-left: 20%;
+}
+.margin-left-short {
+  margin-left: 10%;
 }

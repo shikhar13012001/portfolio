@@ -1,0 +1,21 @@
+.headerSize {
+  font-size: 1.3em;
+  height:80px;
+  border-bottom:1px solid #1e2435;
+}
+.sideBorder{
+    border-right:1px solid #1e2435;
+    height:100%;
+    display: flex;
+    align-items: center;
+    padding:20px;
+}
+
+.NavLinkSpacing{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.NavLinkSpacing > p{
+    color:#747083!important;
+}
