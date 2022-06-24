@@ -6,6 +6,8 @@ import About from "../Components/About";
 import Skills from "../Components/Skills";
 import Tools from "../Components/Tools";
 import Projects from "../Components/Projects";
+import Contact from "../Components/Contact";
+import Footer from "../Components/Footer"
 export default function Home() {
   return (
     <Box  sx={{ width: "100%", minHeight: "100vh" }}>
@@ -15,6 +17,8 @@ export default function Home() {
       <Skills />
       <Tools />
       <Projects />
+      <Contact />
+      <Footer />
     </Box>
   );
 }

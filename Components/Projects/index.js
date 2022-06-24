@@ -46,10 +46,15 @@ const Projects = () => {
   return (
     <Container
       disableGutters={true}
-      sx={{ width: "100%", minHeight: "100vh", mt: 20, mb: 100 }}
+      sx={{ width: "100%", minHeight: "100vh", mt: 20, mb: 10 }}
     >
-      <Typography variant="h4" className="SpaceFont" sx={{ mb: 15 }}>
+      <Typography variant="h4" className="SpaceFont" sx={{ mb: 1 }}>
         Projects
+      </Typography>
+      <Typography variant="body1" className="GrayColor SpaceFont" sx={{width:'30%',mb:15}}>
+        Here are some of the projects I have worked on.
+        Feel free to check out some of my work.
+        Few Projects are not hosted because of the cost of hosting.
       </Typography>
       <Grid container columns={12}>
         <Grid item xs={12} sm={1} md={1} lg={1}>

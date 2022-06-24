@@ -1,8 +1,11 @@
 import "../styles/globals.css";
 import React from "react";
-import Header from "../Components/Header";
+import Header from "../Components/Header"; 
+import { Box } from "@mui/material"; 
+import easyScroll from "easy-scroll";
 function MyApp({ Component, pageProps }) {
   React.useEffect(()=>{
+  
     const pointer = document.createElement("div");
     pointer.id = "pointer-dot";
     const ring = document.createElement("div");
@@ -85,11 +88,21 @@ function MyApp({ Component, pageProps }) {
       ringClickSize: 20, // Pixels when clicking
     });
   },[]);
+
+  React.useEffect(()=>{
+    easyScroll({
+      scrollableDomEle: window,
+      direction: "bottom",
+      duration: 1000,
+      easingPreset: "easeInOutQuad",
+      scrollAmount: 0,
+    });
+  },[])
   return (
-    <React.Fragment>
+    <Box sx={{width:"100%",minHeight:"100vh"}} id="scroll-container">
       <Header />
       <Component {...pageProps} />
-    </React.Fragment>
+    </Box>
   );
 }
 

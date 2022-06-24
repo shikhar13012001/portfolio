@@ -1,0 +1,42 @@
+.Border {
+  border: 1px solid #1e2435;
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #131313;
+  box-shadow: -52px 51px 161px 0px rgba(142,119,234,0.5);
+  border:1.5px solid #1e2435;
+}
+
+.formBtn {
+  background-color: #0b0303;
+  color: #fff;
+  width: 60%;
+  border: 1px solid #8e77ea;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.formBtn:hover {
+  background-color: #8e77ea;
+  color: #0b0303;
+}
+
+.rotate {
+  animation: rotate 10s infinite linear;
+}                                     
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}  
