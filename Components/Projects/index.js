@@ -1,0 +1,210 @@
+/* eslint-disable @next/next/no-img-element */
+import React from "react";
+import {
+  Box,
+  Typography,
+  Container,
+  styled,
+  Grid,
+  Divider,
+} from "@mui/material";
+import ProjectStyles from "../../styles/Project.module.css";
+import { fontSizes } from "../../fonts";
+import Image from "next/image";
+import { gsap } from "gsap";
+const Projects = () => {
+  React.useEffect(() => {
+    const items = document.querySelectorAll(".text_hover");
+
+    items.forEach((el) => {
+      const image = el.querySelector("img");
+      console.log("image", image);
+
+      el.addEventListener("mouseenter", (e) => {
+        console.log(e);
+        gsap.to(image, {
+          autoAlpha: 1,
+          translateY: -100,
+          duration: 1,
+        });
+      });
+
+      el.addEventListener("mouseleave", (e) => {
+        gsap.to(image, {
+          autoAlpha: 0,
+          translateY: 100,
+          duration: 1,
+        });
+      });
+      el.addEventListener("mousemove", (e) => {
+        image.style.top = e.pageY + image.offsetHeight / 2 + "px";
+        image.style.left = e.pageX + "px";
+        // gsap.set(image, { x: e.offsetX + 20, y: e.offsetY - 130 });
+      });
+    });
+  }, []);
+  return (
+    <Container
+      disableGutters={true}
+      sx={{ width: "100%", minHeight: "100vh", mt: 20, mb: 100 }}
+    >
+      <Typography variant="h4" className="SpaceFont" sx={{ mb: 15 }}>
+        Projects
+      </Typography>
+      <Grid container columns={12}>
+        <Grid item xs={12} sm={1} md={1} lg={1}>
+          <Typography variant="h6" className="SpaceFont">
+            (01)
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
+          <Typography
+            variant="h1"
+            fontSize={fontSizes}
+            sx={{
+              fontStyle: "italic",
+              "&:hover": {
+                ml: 2,
+              },
+              transition: `all 0.1s ease-in`,
+            }}
+          >
+            Black Bird Blog
+          </Typography>
+
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={"https://i.ibb.co/pP48W4j/Blog.png"}
+            className={ProjectStyles.imageHover}
+            alt="pan"
+          />
+        </Grid>
+        <Divider
+          sx={{ backgroundColor: "#1e2435", width: "100%", mt: 3, mb: 3 }}
+        />
+      </Grid>
+      <Grid container columns={12}>
+        <Grid item xs={12} sm={1} md={1} lg={1}>
+          <Typography variant="h6" className="SpaceFont">
+            (02)
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
+          <Typography
+            variant="h1"
+            fontSize={fontSizes}
+            sx={{
+              fontStyle: "italic",
+              "&:hover": {
+                ml: 2,
+              },
+              transition: `all 0.1s ease-in`,
+            }}
+          >
+            Gissues
+          </Typography>
+          <img
+            src={"https://i.ibb.co/QmfJjfm/Gissues.png"}
+            className={ProjectStyles.imageHover}
+            alt="pan"
+          />
+        </Grid>
+        <Divider
+          sx={{ backgroundColor: "#1e2435", width: "100%", mt: 3, mb: 3 }}
+        />
+      </Grid>
+      <Grid container columns={12}>
+        <Grid item xs={12} sm={1} md={1} lg={1}>
+          <Typography variant="h6" className="SpaceFont">
+            (03)
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
+          <Typography
+            variant="h1"
+            fontSize={fontSizes}
+            sx={{
+              fontStyle: "italic",
+              "&:hover": {
+                ml: 2,
+              },
+              transition: `all 0.1s ease-in`,
+            }}
+          >
+            Museum of Louvre
+          </Typography>
+          <img
+            src={"https://i.ibb.co/8PZbBWq/Museum.png"}
+            className={ProjectStyles.imageHover}
+            alt="pan"
+          />
+        </Grid>
+        <Divider
+          sx={{ backgroundColor: "#1e2435", width: "100%", mt: 3, mb: 3 }}
+        />
+      </Grid>
+      <Grid container columns={12}>
+        <Grid item xs={12} sm={1} md={1} lg={1}>
+          <Typography variant="h6" className="SpaceFont">
+            (04)
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
+          <Typography
+            variant="h1"
+            fontSize={fontSizes}
+            sx={{
+              fontStyle: "italic",
+              "&:hover": {
+                ml: 2,
+              },
+              transition: `all 0.1s ease-in`,
+            }}
+          >
+            Prospero
+          </Typography>
+          <img
+            src={"https://i.ibb.co/sV9nX4Z/Screenshot-189.png"}
+            className={ProjectStyles.imageHover}
+            alt="pan"
+          />
+        </Grid>
+        <Divider
+          sx={{ backgroundColor: "#1e2435", width: "100%", mt: 3, mb: 3 }}
+        />
+      </Grid>
+      <Grid container columns={12}>
+        <Grid item xs={12} sm={1} md={1} lg={1}>
+          <Typography variant="h6" className="SpaceFont">
+            (05)
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
+          <Typography
+            variant="h1"
+            fontSize={fontSizes}
+            sx={{
+              fontStyle: "italic",
+              "&:hover": {
+                ml: 2,
+              },
+              transition: `all 0.1s ease-in`,
+            }}
+          >
+            Stimuler
+          </Typography>
+          <img
+            src={"https://i.ibb.co/JmtNNJv/Screenshot-190.png"}
+            className={ProjectStyles.imageHover}
+            alt="pan"
+          />
+        </Grid>
+        <Divider
+          sx={{ backgroundColor: "#1e2435", width: "100%", mt: 3, mb: 3 }}
+        />
+      </Grid>
+    </Container>
+  );
+};
+
+export default Projects;

@@ -17,6 +17,7 @@
 
 body {
   background-color: #060606;
+  overflow-x: hidden;
 }
 span.important-word {
   color: #7176eb !important;

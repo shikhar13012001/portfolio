@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Container, styled, Grid } from "@mui/material";
+import { Box, Typography, Container, styled, Grid,Divider } from "@mui/material";
 import { fontSizes } from "../../fonts";
 import ToolsStyle from "../../styles/Tools.module.css";
 import Image from "next/image";
@@ -115,6 +115,7 @@ const Tools = () => {
           Still learning new stuff, I’ll be adding more tools as I learn new :)
         </Typography>
       </Container>
+      <Divider sx={{ backgroundColor: "#1e2435" }} />
     </Box>
   );
 };

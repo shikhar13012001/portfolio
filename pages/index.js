@@ -5,6 +5,7 @@ import Hero from "../Components/Hero";
 import About from "../Components/About";
 import Skills from "../Components/Skills";
 import Tools from "../Components/Tools";
+import Projects from "../Components/Projects";
 export default function Home() {
   return (
     <Box  sx={{ width: "100%", minHeight: "100vh" }}>
@@ -13,6 +14,7 @@ export default function Home() {
       <About />
       <Skills />
       <Tools />
+      <Projects />
     </Box>
   );
 }
