@@ -1,0 +1,46 @@
+.fullSize {
+  width: 100%;
+  min-height: 90vh;
+  margin-top: 200px;
+}
+
+.description {
+  color: #747083 !important;
+  font-size: 1.1rem;
+}
+.title {
+  color: #747083 !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 20px;
+}
+.Rtitle{
+    color: #747083!important;
+  font-weight: bold;
+  margin-top: 20px;
+  font-style: italic;
+}
+.AboutImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  height: 500px;
+}
+.AboutImageComponent {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.Marquee {
+  height: 100px;
+  width: 466px !important;
+}
+.Circle {
+  fill: #7176e7 !important;
+  margin-left: 20px;
+  margin-right: 20px;
+}
