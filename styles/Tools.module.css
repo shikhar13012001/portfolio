@@ -1,0 +1,8 @@
+.bgImage{
+    background-image: url("../public/gradients/purple.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    
+}
+ 

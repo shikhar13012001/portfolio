@@ -1,14 +1,18 @@
 
-import { Container } from "@mui/material";
+import { Container,Box } from "@mui/material";
 import Scroller from "../Components/Scroller";
 import Hero from "../Components/Hero";
 import About from "../Components/About";
+import Skills from "../Components/Skills";
+import Tools from "../Components/Tools";
 export default function Home() {
   return (
-    <Container disableGutters sx={{width:'100%',minHeight:'100vh'}}>
+    <Box  sx={{ width: "100%", minHeight: "100vh" }}>
       <Hero />
       <Scroller />
       <About />
-    </Container>
+      <Skills />
+      <Tools />
+    </Box>
   );
 }

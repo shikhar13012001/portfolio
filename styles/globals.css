@@ -31,3 +31,40 @@ span.important-word {
 .heroCaption{
   margin-left: 10px;
 }
+#pointer-dot {
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 5px solid #7176eb!important;
+    position: fixed;
+    border-radius: 5px;
+    z-index: 101;
+    pointer-events: none;
+    transition: border-color 0.5s;
+}
+
+#pointer-ring {
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    padding: 15px;
+    border: 2px solid #7176eb;
+    position: fixed;
+    border-radius: 100px;
+    z-index: 102;
+    pointer-events: none;
+}
+
+html {
+    cursor: none !important;
+}
+
+a {
+    cursor: none !important;
+}
+
+.GrayColor {
+   color:#747083!important;
+}
