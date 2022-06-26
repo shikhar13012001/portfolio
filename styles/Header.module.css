@@ -1,22 +1,22 @@
 .headerSize {
-  font-size: 1.3em;
-  height:80px;
-  border-bottom:1px solid #1e2435;
+  font-size: 1.3em !important;
+  height:80px !important;
+  border-bottom:1px solid #1e2435 !important;
 }
 .sideBorder{
-    border-right:1px solid #1e2435;
-    height:100%;
-    display: flex;
-    align-items: center;
-    padding:20px;
+    border-right:1px solid #1e2435 !important;
+    height:100% !important;
+    display: flex !important;
+    align-items: center !important;
+    padding:20px !important;
 }
 
 .NavLinkSpacing{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
 }
 .NavLinkSpacing > p{
-    color:#747083!important;
+    color:#747083 !important;
    
 }

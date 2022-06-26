@@ -1,46 +1,46 @@
 .fullSize {
-  width: 100%;
-  min-height: 90vh;
-  margin-top: 200px;
+  width: 100% !important;
+  min-height: 90vh !important;
+  margin-top: 200px !important;
 }
 
 .description {
-  color: #747083 !important;
-  font-size: 1.1rem;
+  color: #747083  !important;
+  font-size: 1.1rem !important;
 }
 .title {
-  color: #747083 !important;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-right: 20px;
+  color: #747083  !important;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  margin-right: 20px !important;
 }
 .Rtitle{
-    color: #747083!important;
-  font-weight: bold;
-  margin-top: 20px;
-  font-style: italic;
+    color: #747083 !important;
+  font-weight: bold !important;
+  margin-top: 20px !important;
+  font-style: italic !important;
 }
 .AboutImage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  height: 500px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  border-top-left-radius: 50% !important;
+  border-top-right-radius: 50% !important;
+  height: 500px !important;
 }
 .AboutImageComponent {
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  width: 100%;
-  object-fit: cover;
+  border-top-left-radius: 50% !important;
+  border-top-right-radius: 50% !important;
+  width: 100% !important;
+  object-fit: cover !important;
 }
 
 .Marquee {
-  height: 100px;
-  width: 466px !important;
+  height: 100px !important;
+  width: 466px  !important;
 }
 .Circle {
-  fill: #7176e7 !important;
-  margin-left: 20px;
-  margin-right: 20px;
+  fill: #7176e7  !important;
+  margin-left: 20px !important;
+  margin-right: 20px !important;
 }
