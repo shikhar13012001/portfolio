@@ -2,6 +2,8 @@
   "name": "portfolio-shikhar13012001",
   "version": "0.1.0",
   "private": true,
+  "description": "Design and Development",
+  
   "scripts": {
     "dev": "next dev",
     "build": "next build",

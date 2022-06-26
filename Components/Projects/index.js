@@ -18,7 +18,7 @@ const Projects = () => {
 
     items.forEach((el) => {
       const image = el.querySelector("img");
-      console.log("image", image);
+ 
 
       el.addEventListener("mouseenter", (e) => {
         console.log(e);

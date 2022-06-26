@@ -5,7 +5,14 @@ import { BsGithub } from "react-icons/bs";
 const Header = () => {
   return (
     <Grid container columns={12} className={HeaderStyles.headerSize}>
-      <Grid item lg={4} className={HeaderStyles.sideBorder}>
+      <Grid
+        item
+        lg={4}
+        md={4}
+        sm={4}
+        xs={4}
+        className={HeaderStyles.sideBorder}
+      >
         <BsGithub size={40} />{" "}
         <span className="important-word margin-left-short SpaceFont">
           @shikhar13012001
@@ -14,6 +21,9 @@ const Header = () => {
       <Grid
         item
         lg={4}
+        md={4}
+        sm={4}
+        xs={4}
         className={`${HeaderStyles.sideBorder} ${HeaderStyles.NavLinkSpacing}`}
       >
         <Typography
@@ -34,6 +44,9 @@ const Header = () => {
       <Grid
         item
         lg={4}
+        md={4}
+        sm={4}
+        xs={4}
         className={`${HeaderStyles.sideBorder} ${HeaderStyles.NavLinkSpacing}`}
       >
         <Typography
@@ -41,9 +54,8 @@ const Header = () => {
           sx={{ fontWeight: "bold" }}
           className="SpaceFont"
         >
-        GET IN TOUCH
+          GET IN TOUCH
         </Typography>
-         
       </Grid>
     </Grid>
   );
