@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../Components/Header"; 
 import { Box } from "@mui/material"; 
 import easyScroll from "easy-scroll";
+import { StylesProvider } from "@mui/styles";
 function MyApp({ Component, pageProps }) {
   React.useEffect(()=>{
   
@@ -99,10 +100,12 @@ function MyApp({ Component, pageProps }) {
     });
   },[])
   return (
-    <Box sx={{width:"100%",minHeight:"100vh"}} id="scroll-container">
-      <Header />
-      <Component {...pageProps} />
-    </Box>
+    <StylesProvider injectFirst>
+      <Box sx={{ width: "100%", minHeight: "100vh" }} id="scroll-container">
+        <Header />
+        <Component {...pageProps} />
+      </Box>
+    </StylesProvider>
   );
 }
 

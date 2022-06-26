@@ -24,7 +24,7 @@ button.formBtn {
   cursor: pointer;
   margin-top: 10px;
 }
-.formBtn:hover {
+button.formBtn:hover {
   background-color: #8e77ea;
   color: #0b0303;
 }
