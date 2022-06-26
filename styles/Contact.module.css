@@ -12,7 +12,7 @@
   border:1.5px solid #1e2435;
 }
 
-.formBtn {
+button.formBtn {
   background-color: #0b0303;
   color: #fff;
   width: 60%;
