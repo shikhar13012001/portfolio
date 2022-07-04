@@ -196,6 +196,7 @@ const Projects = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
+          <Link href="/works/stimuler">
           <Typography
             variant="h1"
             fontSize={fontSizes}
@@ -209,6 +210,7 @@ const Projects = () => {
           >
             Stimuler
           </Typography>
+          </Link>
           <img
             src={"https://i.ibb.co/JmtNNJv/Screenshot-190.png"}
             className={ProjectStyles.imageHover}
