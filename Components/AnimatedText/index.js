@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Typography } from "@mui/material";
-import { fontSizes,FontSizes } from "../../fonts";
+import { fontSizes, FontSizes } from "../../fonts";
 // Word wrapper
 const Wrapper = (props) => {
   // We'll do this to prevent wrapping of words using CSS
@@ -20,14 +20,14 @@ const tagMap = {
 // individual character animations
 const AnimatedCharacters = (props) => {
   // Framer Motion variant object, for controlling animation
- 
+
   const item = {
     hidden: {
-      y: "200%", 
+      y: "200%",
       transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.85 },
     },
     visible: {
-      y: 0, 
+      y: 0,
       transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.75 },
     },
   };
@@ -48,7 +48,7 @@ const AnimatedCharacters = (props) => {
     return word.push("\u00A0");
   });
 
-  // Get the tag name from tagMap 
+  // Get the tag name from tagMap
 
   return (
     <Typography variant="h1" fontSize={fontSizes}>

@@ -9,8 +9,8 @@ import AnimatedText from "../AnimatedText";
 import { useMediaQuery } from "@mui/material";
 
 const placeholderText = [
-  { type: "heading1", text: "WELCOME TO THE ",color:"white" },
-  { type: "heading1", text: "WORKSPACE OF",color:"white" },
+  { type: "heading1", text: "WELCOME TO THE ", color: "white" },
+  { type: "heading1", text: "WORKSPACE OF", color: "white" },
   { type: "heading1", text: "SHIKHAR", color: "#7176eb" },
 ];
 const container = {

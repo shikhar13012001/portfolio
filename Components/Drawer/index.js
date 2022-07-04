@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
-import Button from "@mui/material/Button"; 
+import Button from "@mui/material/Button";
 import { RiMenu4Fill } from "react-icons/ri";
 import DrawerStyles from "../../styles/Drawer.module.css";
 import { motion } from "framer-motion";

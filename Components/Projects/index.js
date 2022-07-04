@@ -1,12 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import {
-  Box,
-  Typography,
-  Container,
-  Grid,
-  Divider,
-} from "@mui/material";
+import { Box, Typography, Container, Grid, Divider } from "@mui/material";
 import ProjectStyles from "../../styles/Project.module.css";
 import { fontSizes } from "../../fonts";
 import Link from "next/link";
@@ -16,7 +10,7 @@ const Projects = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   React.useEffect(() => {
     const items = document.querySelectorAll(".text_hover");
-    console.log(isMobile)
+    console.log(isMobile);
     if (!isMobile) {
       items.forEach((el) => {
         const image = el.querySelector("img");
@@ -70,19 +64,19 @@ const Projects = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
           {/* <Link href="/works/black-bird-blog"> */}
-            <Typography
-              variant="h1"
-              fontSize={fontSizes}
-              sx={{
-                fontStyle: "italic",
-                "&:hover": {
-                  ml: 2,
-                },
-                transition: `all 0.1s ease-in`,
-              }}
-            >
-              Black Bird Blog
-            </Typography>
+          <Typography
+            variant="h1"
+            fontSize={fontSizes}
+            sx={{
+              fontStyle: "italic",
+              "&:hover": {
+                ml: 2,
+              },
+              transition: `all 0.1s ease-in`,
+            }}
+          >
+            Black Bird Blog
+          </Typography>
           {/* </Link> */}
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -122,7 +116,6 @@ const Projects = () => {
             src={"https://i.ibb.co/QmfJjfm/Gissues.png"}
             className={ProjectStyles.imageHover}
             alt="pan"
-
           />
         </Grid>
         <Divider

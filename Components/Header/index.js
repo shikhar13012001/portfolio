@@ -3,11 +3,11 @@ import { Grid, Typography } from "@mui/material";
 import HeaderStyles from "../../styles/Header.module.css";
 import { BsGithub } from "react-icons/bs";
 import { FontSizes } from "../../fonts";
-import {useMediaQuery} from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import Drawer from "../Drawer";
 const Header = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
-  return !isMobile?(
+  return !isMobile ? (
     <Grid container columns={12} className={HeaderStyles.headerSize}>
       <Grid
         item
@@ -65,13 +65,24 @@ const Header = () => {
         </Typography>
       </Grid>
     </Grid>
-  ):(
-     <Grid container columns={12} className={HeaderStyles.headerSize}>
-      <Grid item xs={12} sm={12} md={12} lg={12} sx={{display:'flex',p:`0 20px`,justifyContent:'space-between',alignItems:'center'}}>
-        <BsGithub size={30} />{" "}
-         <Drawer/>
-         </Grid>
-     </Grid>
+  ) : (
+    <Grid container columns={12} className={HeaderStyles.headerSize}>
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        sx={{
+          display: "flex",
+          p: `0 20px`,
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <BsGithub size={30} /> <Drawer />
+      </Grid>
+    </Grid>
   );
 };
 

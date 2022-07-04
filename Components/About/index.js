@@ -1,12 +1,12 @@
 import React from "react";
 import { Grid, Typography, Button, styled, Container } from "@mui/material";
 import AboutStyles from "../../styles/About.module.css";
-import { fontSizes,FontSizes } from "../../fonts";
+import { fontSizes, FontSizes } from "../../fonts";
 import Image from "next/image";
 import ME from "../../public/images/demo.png";
 import Marquee from "react-fast-marquee";
 import { BsFillCircleFill } from "react-icons/bs";
-import {useMediaQuery} from "@mui/material"
+import { useMediaQuery } from "@mui/material";
 
 const About = () => {
   const StyledButton = styled(Button)({
@@ -54,7 +54,11 @@ const About = () => {
             anymore. Now I can develop my own digital creations into an online
             experience, while having full control of design, motion and build.
           </Typography>
-          <Typography variant="h2" className={AboutStyles.Rtitle} fontSize={FontSizes.subHeading}>
+          <Typography
+            variant="h2"
+            className={AboutStyles.Rtitle}
+            fontSize={FontSizes.subHeading}
+          >
             FIND MY <span className="important-word">RESUME</span> HERE
           </Typography>
           <StyledButton>Download Resume</StyledButton>

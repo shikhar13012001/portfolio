@@ -7,11 +7,11 @@ import {
   InputBase,
   Button,
 } from "@mui/material";
-import { fontSizes,FontSizes } from "../../fonts";
+import { fontSizes, FontSizes } from "../../fonts";
 import Flower from "../../public/flower.svg";
 import Image from "next/image";
 import ContactStyles from "../../styles/Contact.module.css";
-import {useMediaQuery} from "@mui/material"
+import { useMediaQuery } from "@mui/material";
 const StyledTextField = styled(TextField)({
   width: "80%",
   minHeight: 60,
@@ -48,7 +48,11 @@ const Contact = () => {
         <Typography
           variant="body1"
           className="GrayColor SpaceFont"
-          sx={{ width: isMobile ? "100%" : "60%", padding:isMobile?'0 20px':null, textAlign: isMobile ? "justify" : null }}
+          sx={{
+            width: isMobile ? "100%" : "60%",
+            padding: isMobile ? "0 20px" : null,
+            textAlign: isMobile ? "justify" : null,
+          }}
           fontSize={FontSizes.ProjectDescription}
         >
           I am available for a limited number of freelance projects this year.

@@ -30,10 +30,10 @@ export const FontSizes = {
     sm: 16,
     xs: 14,
   },
-  about:{
+  about: {
     lg: 35,
     md: 30,
     sm: 25,
     xs: 20,
-  }
+  },
 };

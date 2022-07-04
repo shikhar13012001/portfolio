@@ -20,9 +20,9 @@ import ProjectImage4 from "../../public/works/stimuler/SS4.png";
 import ProjectImage5 from "../../public/works/stimuler/SS5.png";
 import Mood from "../../public/works/stimuler/moodboard/mood.png";
 import Layout from "../../Components/Layout";
-import {useMediaQuery } from "@mui/material"
+import { useMediaQuery } from "@mui/material";
 const Project = () => {
-    const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Layout
       title={"WORKS | STIMULER"}

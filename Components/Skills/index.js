@@ -10,11 +10,14 @@ const Skills = () => {
     fontStyle: "italic",
     "@media (max-width:600px)": {
       marginRight: 0,
-    }
+    },
   });
   return (
     <Box sx={{ width: "100%", minHeight: "30vh", mt: 20 }}>
-      <Marquee gradient={false} style={{ width: "100%", height: 200,overflow:"hidden" }}>
+      <Marquee
+        gradient={false}
+        style={{ width: "100%", height: 200, overflow: "hidden" }}
+      >
         <StyledTypography variant="h2">
           <BsFillCircleFill className={SkillsStyle.circle} size={30} />{" "}
           FULLSTACK DEVELOPER{" "}
