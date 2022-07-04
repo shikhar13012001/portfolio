@@ -20,7 +20,7 @@ const tagMap = {
 // individual character animations
 const AnimatedCharacters = (props) => {
   // Framer Motion variant object, for controlling animation
-  console.log(props.color)
+ 
   const item = {
     hidden: {
       y: "200%", 
