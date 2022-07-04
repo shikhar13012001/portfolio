@@ -20,15 +20,14 @@ const tagMap = {
 // individual character animations
 const AnimatedCharacters = (props) => {
   // Framer Motion variant object, for controlling animation
+  console.log(props.color)
   const item = {
     hidden: {
-      y: "200%",
-      color: "#0055FF",
+      y: "200%", 
       transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.85 },
     },
     visible: {
-      y: 0,
-      color: "#FF0088",
+      y: 0, 
       transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.75 },
     },
   };
@@ -67,7 +66,7 @@ const AnimatedCharacters = (props) => {
                   key={index}
                 >
                   <motion.span
-                    style={{ display: "inline-block" }}
+                    style={{ display: "inline-block",color:`${props.color}!important` }}
                     variants={item}
                   >
                     {element}
