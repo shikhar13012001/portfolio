@@ -9,8 +9,8 @@ import AnimatedText from "../AnimatedText";
 import { useMediaQuery } from "@mui/material";
 
 const placeholderText = [
-  { type: "heading1", text: "WELCOME TO THE " },
-  { type: "heading1", text: "WORKSPACE OF" },
+  { type: "heading1", text: "WELCOME TO THE ",color:"white" },
+  { type: "heading1", text: "WORKSPACE OF",color:"white" },
   { type: "heading1", text: "SHIKHAR", color: "#7176eb" },
 ];
 const container = {
@@ -31,7 +31,7 @@ export default function Home() {
         variants={container}
       >
         {placeholderText.map((item, index) => {
-          return <AnimatedText {...item} key={index} color={item.color} />;
+          return <AnimatedText {...item} key={index} />;
         })}
       </motion.div>
     </Container>

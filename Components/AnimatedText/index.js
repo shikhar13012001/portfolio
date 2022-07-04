@@ -62,11 +62,15 @@ const AnimatedCharacters = (props) => {
                   style={{
                     overflow: "hidden",
                     display: "inline-block",
+                    color: `${props.color}!important`,
                   }}
                   key={index}
                 >
                   <motion.span
-                    style={{ display: "inline-block",color:`${props.color}!important` }}
+                    style={{
+                      display: "inline-block",
+                      color: `${props.color}!important`,
+                    }}
                     variants={item}
                   >
                     {element}
