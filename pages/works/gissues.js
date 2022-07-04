@@ -20,12 +20,17 @@ import ProjectImage4 from "../../public/works/gissues/SS4.png";
 import ProjectImage6 from "../../public/works/gissues/SS6.png";
 import Mood from "../../public/works/gissues/moodboard/mood.png";
 import Layout from "../../Components/Layout";
-import {useMediaQuery} from '@mui/material'
+import { useMediaQuery } from "@mui/material";
 
 const Project = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
-    <Layout>
+    <Layout
+      title={"WORKS | GISSUES"}
+      description={`  Gissues is small side educational project build upon GitHub API
+                ( GraphQl ) to demonstrate the usage of graphql and Apollo
+                client in Next js.`}
+    >
       <Container
         disableGutters={!isMobile}
         className={WorkStyles.FullSize}
@@ -68,7 +73,14 @@ const Project = () => {
                 Visit Site <RiExternalLinkLine />
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={12} md={4} lg={4} sx={{mb:isMobile?10:0}}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={4}
+              lg={4}
+              sx={{ mb: isMobile ? 10 : 0 }}
+            >
               <Typography variant="h4" sx={{ mt: 4 }}>
                 Date
               </Typography>

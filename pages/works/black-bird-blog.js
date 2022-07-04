@@ -22,11 +22,16 @@ import ProjectImage7 from "../../public/works/blackbird/SS19.png";
 import ProjectImage8 from "../../public/works/blackbird/SS13.png";
 import Mood from "../../public/works/blackbird/moodboard/mood.png";
 import Layout from "../../Components/Layout";
-import {useMediaQuery} from '@mui/material'
+import { useMediaQuery } from "@mui/material";
 const Project = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
-    <Layout>
+    <Layout
+      title={"WORKS | BLACKBIRD"}
+      description={`This project is an educational asset demonstrating the use of
+                AWS amplify, Graphql API, Appsync, Material UI and amazon
+                cognito.`}
+    >
       <Container
         disableGutters={!isMobile}
         className={WorkStyles.FullSize}
@@ -76,7 +81,14 @@ const Project = () => {
                 Visit Site <RiExternalLinkLine />
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={12} md={4} lg={4} sx={{mb:isMobile?10:0}}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={4}
+              lg={4}
+              sx={{ mb: isMobile ? 10 : 0 }}
+            >
               <Typography variant="h4" sx={{ mt: 4 }}>
                 Date
               </Typography>

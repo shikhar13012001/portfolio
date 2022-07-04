@@ -2,7 +2,6 @@ import "../styles/globals.css";
 import React from "react";
 import { Box } from "@mui/material";
 import easyScroll from "easy-scroll";
-import { StylesProvider } from "@mui/styles";
 function MyApp({ Component, pageProps }) {
   React.useEffect(() => {
     const pointer = document.createElement("div");

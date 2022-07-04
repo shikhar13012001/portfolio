@@ -24,7 +24,13 @@ import { useMediaQuery } from "@mui/material";
 const Project = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
-    <Layout>
+    <Layout
+      title={"WORKS | PROSPERO"}
+      description={`Prospero is a hackathon project that is a web application that
+                is capable of managin user data participating in a college Fest
+                website. This is first ever major project that I undertook in my
+                college.`}
+    >
       <Container
         disableGutters={!isMobile}
         className={WorkStyles.FullSize}

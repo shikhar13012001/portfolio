@@ -24,7 +24,14 @@ import {useMediaQuery } from "@mui/material"
 const Project = () => {
     const isMobile = useMediaQuery("(max-width:600px)");
   return (
-    <Layout>
+    <Layout
+      title={"WORKS | STIMULER"}
+      description={`
+      Stimuler is an tech agency that specializes in speech training
+                of linguistics, particulary English, This website is the home
+                page of the agency.
+    `}
+    >
       <Container
         disableGutters={!isMobile}
         className={WorkStyles.FullSize}
@@ -66,7 +73,14 @@ const Project = () => {
                 Visit Site <RiExternalLinkLine />
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={12} md={4} lg={4} sx={{mb:isMobile?10:0}}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={4}
+              lg={4}
+              sx={{ mb: isMobile ? 10 : 0 }}
+            >
               <Typography variant="h4" sx={{ mt: 4 }}>
                 Date
               </Typography>
