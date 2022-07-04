@@ -48,7 +48,7 @@ const Contact = () => {
         <Typography
           variant="body1"
           className="GrayColor SpaceFont"
-          sx={{ width: isMobile ? "100%" : "60%", margin: isMobile ? 2 : 4 }}
+          sx={{ width: isMobile ? "100%" : "60%", padding:isMobile?'0 20px':null, textAlign: isMobile ? "justify" : null }}
           fontSize={FontSizes.ProjectDescription}
         >
           I am available for a limited number of freelance projects this year.

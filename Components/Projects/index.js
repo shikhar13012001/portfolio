@@ -12,39 +12,39 @@ import ProjectStyles from "../../styles/Project.module.css";
 import { fontSizes } from "../../fonts";
 import Link from "next/link";
 import { gsap } from "gsap";
-import {useMediaQuery} from '@mui/material'
+import { useMediaQuery } from "@mui/material";
 const Projects = () => {
-
-
   const isMobile = useMediaQuery("(max-width:600px)");
   React.useEffect(() => {
     const items = document.querySelectorAll(".text_hover");
+    console.log(isMobile)
+    if (!isMobile) {
+      items.forEach((el) => {
+        const image = el.querySelector("img");
 
-    items.forEach((el) => {
-      const image = el.querySelector("img");
+        el.addEventListener("mouseenter", (e) => {
+          console.log(e);
+          gsap.to(image, {
+            autoAlpha: 1,
+            translateY: -100,
+            duration: 1,
+          });
+        });
 
-      el.addEventListener("mouseenter", (e) => {
-        console.log(e);
-        gsap.to(image, {
-          autoAlpha: 1,
-          translateY: -100,
-          duration: 1,
+        el.addEventListener("mouseleave", (e) => {
+          gsap.to(image, {
+            autoAlpha: 0,
+            translateY: 100,
+            duration: 1,
+          });
+        });
+        el.addEventListener("mousemove", (e) => {
+          image.style.top = e.pageY + image.offsetHeight / 2 + "px";
+          image.style.left = e.pageX + "px";
+          // gsap.set(image, { x: e.offsetX + 20, y: e.offsetY - 130 });
         });
       });
-
-      el.addEventListener("mouseleave", (e) => {
-        gsap.to(image, {
-          autoAlpha: 0,
-          translateY: 100,
-          duration: 1,
-        });
-      });
-      el.addEventListener("mousemove", (e) => {
-        image.style.top = e.pageY + image.offsetHeight / 2 + "px";
-        image.style.left = e.pageX + "px";
-        // gsap.set(image, { x: e.offsetX + 20, y: e.offsetY - 130 });
-      });
-    });
+    }
   }, []);
   return (
     <Container
@@ -57,7 +57,7 @@ const Projects = () => {
       <Typography
         variant="body1"
         className="GrayColor SpaceFont"
-        sx={{ width: isMobile?"100%":"30%", mb: 15 }}
+        sx={{ width: isMobile ? "100%" : "30%", mb: 15 }}
       >
         Here are some of the projects I have worked on. Feel free to check out
         some of my work. Few Projects are not hosted because of the cost of
@@ -70,7 +70,7 @@ const Projects = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
-          <Link href="/works/black-bird-blog">
+          {/* <Link href="/works/black-bird-blog"> */}
             <Typography
               variant="h1"
               fontSize={fontSizes}
@@ -84,7 +84,7 @@ const Projects = () => {
             >
               Black Bird Blog
             </Typography>
-          </Link>
+          {/* </Link> */}
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -123,6 +123,7 @@ const Projects = () => {
             src={"https://i.ibb.co/QmfJjfm/Gissues.png"}
             className={ProjectStyles.imageHover}
             alt="pan"
+            
           />
         </Grid>
         <Divider
@@ -201,19 +202,19 @@ const Projects = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
           <Link href="/works/stimuler">
-          <Typography
-            variant="h1"
-            fontSize={fontSizes}
-            sx={{
-              fontStyle: "italic",
-              "&:hover": {
-                ml: 2,
-              },
-              transition: `all 0.1s ease-in`,
-            }}
-          >
-            Stimuler
-          </Typography>
+            <Typography
+              variant="h1"
+              fontSize={fontSizes}
+              sx={{
+                fontStyle: "italic",
+                "&:hover": {
+                  ml: 2,
+                },
+                transition: `all 0.1s ease-in`,
+              }}
+            >
+              Stimuler
+            </Typography>
           </Link>
           <img
             src={"https://i.ibb.co/JmtNNJv/Screenshot-190.png"}

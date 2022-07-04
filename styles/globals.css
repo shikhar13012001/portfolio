@@ -69,3 +69,9 @@ a {
 .GrayColor {
   color: #747083 !important;
 }
+
+
+.layout{
+  width:100%;
+  min-height: 100vh;
+}
