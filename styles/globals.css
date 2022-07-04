@@ -14,7 +14,9 @@
   font-family: "Ginger", cursive !important;
   color: white !important;
 }
-
+.App{
+  text-align: center;
+}
 body {
   background-color: #060606;
   overflow-x: hidden;

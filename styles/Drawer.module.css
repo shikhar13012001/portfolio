@@ -1,0 +1,10 @@
+.Drawer {
+  background-color: black;
+  color: white;
+}
+
+.Drawer  h1 {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
