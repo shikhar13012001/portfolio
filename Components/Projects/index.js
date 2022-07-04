@@ -4,7 +4,6 @@ import {
   Box,
   Typography,
   Container,
-  styled,
   Grid,
   Divider,
 } from "@mui/material";
@@ -123,7 +122,7 @@ const Projects = () => {
             src={"https://i.ibb.co/QmfJjfm/Gissues.png"}
             className={ProjectStyles.imageHover}
             alt="pan"
-            
+
           />
         </Grid>
         <Divider
