@@ -1,22 +1,21 @@
 .headerSize {
   font-size: 1.3em !important;
-  height:80px !important;
-  border-bottom:1px solid #1e2435 !important;
+  height: 80px !important;
+  border-bottom: 1px solid #1e2435 !important;
 }
-.sideBorder{
-    border-right:1px solid #1e2435 !important;
-    height:100% !important;
-    display: flex !important;
-    align-items: center !important;
-    padding:20px !important;
+.sideBorder {
+  border-right: 1px solid #1e2435 !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 20px !important;
 }
 
-.NavLinkSpacing{
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-around !important;
+.NavLinkSpacing {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-around !important;
 }
-.NavLinkSpacing > p{
-    color:#747083 !important;
-   
+.NavLinkSpacing > p {
+  color: #747083 !important;
 }

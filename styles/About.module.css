@@ -5,17 +5,17 @@
 }
 
 .description {
-  color: #747083  !important;
+  color: #747083 !important;
   font-size: 1.1rem !important;
 }
 .title {
-  color: #747083  !important;
+  color: #747083 !important;
   font-size: 1.5rem !important;
   font-weight: bold !important;
   margin-right: 20px !important;
 }
-.Rtitle{
-    color: #747083 !important;
+.Rtitle {
+  color: #747083 !important;
   font-weight: bold !important;
   margin-top: 20px !important;
   font-style: italic !important;
@@ -37,10 +37,10 @@
 
 .Marquee {
   height: 100px !important;
-  width: 466px  !important;
+  width: 466px !important;
 }
 .Circle {
-  fill: #7176e7  !important;
+  fill: #7176e7 !important;
   margin-left: 20px !important;
   margin-right: 20px !important;
 }

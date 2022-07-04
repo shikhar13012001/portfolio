@@ -5,7 +5,6 @@ import { Container, Typography } from "@mui/material";
 import { fontSizes } from "../../fonts";
 import React from "react";
 export default function Home() {
- 
   return (
     <Container className={`${styles.center} ${styles.fullSize}`}>
       <Typography variant="h1" fontSize={fontSizes} className="stagger">

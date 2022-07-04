@@ -1,13 +1,13 @@
-.fullSize{
-    width: 100% !important;
-    height:100px !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+.fullSize {
+  width: 100% !important;
+  height: 100px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
-.footerText{
-    color: #fff !important;
-   font-weight: 400 !important;
-    margin-right: 20px !important;
+.footerText {
+  color: #fff !important;
+  font-weight: 400 !important;
+  margin-right: 20px !important;
 }

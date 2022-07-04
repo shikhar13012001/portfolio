@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Typography, Container, styled, Grid,Divider } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Container,
+  styled,
+  Grid,
+  Divider,
+} from "@mui/material";
 import { fontSizes } from "../../fonts";
 import ToolsStyle from "../../styles/Tools.module.css";
 import Image from "next/image";
@@ -49,7 +56,6 @@ const skills = [
   },
 ];
 const Tools = () => {
-
   return (
     <Box sx={{ width: "100%", minHeight: "40vh", mt: 20 }}>
       <Container>

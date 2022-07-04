@@ -23,9 +23,8 @@ const About = () => {
           <br />
           <br />
           <Typography variant="h5" className="SpaceFont">
-            Im a Digital Designer & Visual Developer based in Enschede,
-            Netherlands. Creating digital experiences with an eye for design and
-            motion.
+            Im a Digital Designer & Visual Developer based in Lucknow, India.
+            Creating digital experiences with an eye for design and motion.
           </Typography>
           <br />
           <br />
@@ -34,9 +33,9 @@ const About = () => {
             className={`SpaceFont ${AboutStyles.description}`}
           >
             Being creative with digital and motion design for websites is what
-            I’ve been doing for the past 5+ years. With just UI / UX design I
-            was not satisfied. Creating websites that are visually attractive
-            through design and motion is what I love to do.
+            I’ve been doing for the past few months of College. With just UI /
+            UX design I was not satisfied. Creating websites that are visually
+            attractive through design and motion is what I love to do.
           </Typography>
           <br />
           <br />
@@ -44,7 +43,7 @@ const About = () => {
             variant="h6"
             className={`SpaceFont ${AboutStyles.description}`}
           >
-            By embracing no-code tools like Webflow I'm not just the designer
+            By embracing code and proper tools. I'm not just the designer
             anymore. Now I can develop my own digital creations into an online
             experience, while having full control of design, motion and build.
           </Typography>
@@ -74,7 +73,6 @@ const About = () => {
         </Grid>
       </Grid>
     </Container>
-    
   );
 };
 

@@ -36,13 +36,13 @@ const Contact = () => {
     >
       <Grid item xs={12} sm={12} md={7} lg={7} sx={{ pt: 10 }}>
         <Image src={Flower} alt="flower" className={ContactStyles.rotate} />
-        <Typography variant="h1" fontSize={fontSizes.sm} >
+        <Typography variant="h1" fontSize={fontSizes.sm}>
           Let&apos;s get in touch
         </Typography>
         <Typography
           variant="body1"
           className="GrayColor SpaceFont"
-          sx={{ width: "60%", margin:4 }}
+          sx={{ width: "60%", margin: 4 }}
         >
           I am available for a limited number of freelance projects this year.
           Looking for a DIGITAL DESIGNER VISUAL DEVELOPER? Just get in touch.

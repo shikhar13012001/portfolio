@@ -29,43 +29,43 @@ span.important-word {
 .margin-left-short {
   margin-left: 10%;
 }
-.heroCaption{
+.heroCaption {
   margin-left: 10px;
 }
 #pointer-dot {
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    border: 5px solid #7176eb!important;
-    position: fixed;
-    border-radius: 5px;
-    z-index: 101;
-    pointer-events: none;
-    transition: border-color 0.5s;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border: 5px solid #7176eb !important;
+  position: fixed;
+  border-radius: 5px;
+  z-index: 101;
+  pointer-events: none;
+  transition: border-color 0.5s;
 }
 
 #pointer-ring {
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    padding: 15px;
-    border: 2px solid #7176eb;
-    position: fixed;
-    border-radius: 100px;
-    z-index: 102;
-    pointer-events: none;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  padding: 15px;
+  border: 2px solid #7176eb;
+  position: fixed;
+  border-radius: 100px;
+  z-index: 102;
+  pointer-events: none;
 }
 
 html {
-    cursor: none !important;
+  cursor: none !important;
 }
 
 a {
-    cursor: none !important;
+  cursor: none !important;
 }
 
 .GrayColor {
-   color:#747083!important;
+  color: #747083 !important;
 }

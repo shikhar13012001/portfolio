@@ -1,0 +1,29 @@
+.FullSize {
+  width: 100% !important;
+  min-height: 100vh !important;
+}
+
+.backgroundProject {
+  width: 100% !important;
+  height: 70vh !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  display: grid !important;
+  place-content: center !important;
+}
+
+.MoodBoard {
+  width: 100% !important;
+  height: 70vh !important;
+
+  background-size: contain !important;
+  background-repeat: repeat !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+}
+
+.ProjectDescrption {
+  width: 70% !important;
+}

@@ -1,12 +1,10 @@
 import "../styles/globals.css";
 import React from "react";
-import Header from "../Components/Header"; 
-import { Box } from "@mui/material"; 
+import { Box } from "@mui/material";
 import easyScroll from "easy-scroll";
 import { StylesProvider } from "@mui/styles";
 function MyApp({ Component, pageProps }) {
-  React.useEffect(()=>{
-  
+  React.useEffect(() => {
     const pointer = document.createElement("div");
     pointer.id = "pointer-dot";
     const ring = document.createElement("div");
@@ -88,9 +86,9 @@ function MyApp({ Component, pageProps }) {
       ringSize: 15, // Pixels
       ringClickSize: 20, // Pixels when clicking
     });
-  },[]);
+  }, []);
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     easyScroll({
       scrollableDomEle: window,
       direction: "bottom",
@@ -98,14 +96,11 @@ function MyApp({ Component, pageProps }) {
       easingPreset: "easeInOutQuad",
       scrollAmount: 0,
     });
-  },[])
+  }, []);
   return (
-    <StylesProvider injectFirst>
-      <Box sx={{ width: "100%", minHeight: "100vh" }} id="scroll-container">
-        <Header />
-        <Component {...pageProps} />
-      </Box>
-    </StylesProvider>
+    <Box sx={{ width: "100%", minHeight: "100vh" }} id="scroll-container">
+      <Component {...pageProps} />
+    </Box>
   );
 }
 

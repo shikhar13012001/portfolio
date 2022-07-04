@@ -1,7 +1,7 @@
 {
-    "endOfLine": "lf",
-    "tabSize": 4,
-    "insertSpaces": true,
-    "trimTrailingWhitespace": true,
-    "insertFinalNewline": true
+  "endOfLine": "lf",
+  "tabSize": 4,
+  "insertSpaces": true,
+  "trimTrailingWhitespace": true,
+  "insertFinalNewline": true
 }

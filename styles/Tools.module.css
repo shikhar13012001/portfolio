@@ -1,8 +1,6 @@
-.bgImage{
-    background-image: url("../public/gradients/purple.png") !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important; 
-    
+.bgImage {
+  background-image: url("../public/gradients/purple.png") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
- 

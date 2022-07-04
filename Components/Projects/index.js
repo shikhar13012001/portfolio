@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import ProjectStyles from "../../styles/Project.module.css";
 import { fontSizes } from "../../fonts";
-import Image from "next/image";
+import Link from "next/link";
 import { gsap } from "gsap";
 const Projects = () => {
   React.useEffect(() => {
@@ -18,7 +18,6 @@ const Projects = () => {
 
     items.forEach((el) => {
       const image = el.querySelector("img");
- 
 
       el.addEventListener("mouseenter", (e) => {
         console.log(e);
@@ -51,10 +50,14 @@ const Projects = () => {
       <Typography variant="h4" className="SpaceFont" sx={{ mb: 1 }}>
         Projects
       </Typography>
-      <Typography variant="body1" className="GrayColor SpaceFont" sx={{width:'30%',mb:15}}>
-        Here are some of the projects I have worked on.
-        Feel free to check out some of my work.
-        Few Projects are not hosted because of the cost of hosting.
+      <Typography
+        variant="body1"
+        className="GrayColor SpaceFont"
+        sx={{ width: "30%", mb: 15 }}
+      >
+        Here are some of the projects I have worked on. Feel free to check out
+        some of my work. Few Projects are not hosted because of the cost of
+        hosting.
       </Typography>
       <Grid container columns={12}>
         <Grid item xs={12} sm={1} md={1} lg={1}>
@@ -63,19 +66,21 @@ const Projects = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
-          <Typography
-            variant="h1"
-            fontSize={fontSizes}
-            sx={{
-              fontStyle: "italic",
-              "&:hover": {
-                ml: 2,
-              },
-              transition: `all 0.1s ease-in`,
-            }}
-          >
-            Black Bird Blog
-          </Typography>
+          <Link href="/works/black-bird-blog">
+            <Typography
+              variant="h1"
+              fontSize={fontSizes}
+              sx={{
+                fontStyle: "italic",
+                "&:hover": {
+                  ml: 2,
+                },
+                transition: `all 0.1s ease-in`,
+              }}
+            >
+              Black Bird Blog
+            </Typography>
+          </Link>
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -95,19 +100,21 @@ const Projects = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
-          <Typography
-            variant="h1"
-            fontSize={fontSizes}
-            sx={{
-              fontStyle: "italic",
-              "&:hover": {
-                ml: 2,
-              },
-              transition: `all 0.1s ease-in`,
-            }}
-          >
-            Gissues
-          </Typography>
+          <Link href={"/works/gissues"}>
+            <Typography
+              variant="h1"
+              fontSize={fontSizes}
+              sx={{
+                fontStyle: "italic",
+                "&:hover": {
+                  ml: 2,
+                },
+                transition: `all 0.1s ease-in`,
+              }}
+            >
+              Gissues
+            </Typography>
+          </Link>
           <img
             src={"https://i.ibb.co/QmfJjfm/Gissues.png"}
             className={ProjectStyles.imageHover}
@@ -125,19 +132,21 @@ const Projects = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
-          <Typography
-            variant="h1"
-            fontSize={fontSizes}
-            sx={{
-              fontStyle: "italic",
-              "&:hover": {
-                ml: 2,
-              },
-              transition: `all 0.1s ease-in`,
-            }}
-          >
-            Museum of Louvre
-          </Typography>
+          <Link href={"/works/louvre-meaux"}>
+            <Typography
+              variant="h1"
+              fontSize={fontSizes}
+              sx={{
+                fontStyle: "italic",
+                "&:hover": {
+                  ml: 2,
+                },
+                transition: `all 0.1s ease-in`,
+              }}
+            >
+              Museum of Louvre
+            </Typography>
+          </Link>
           <img
             src={"https://i.ibb.co/8PZbBWq/Museum.png"}
             className={ProjectStyles.imageHover}
@@ -155,19 +164,21 @@ const Projects = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
-          <Typography
-            variant="h1"
-            fontSize={fontSizes}
-            sx={{
-              fontStyle: "italic",
-              "&:hover": {
-                ml: 2,
-              },
-              transition: `all 0.1s ease-in`,
-            }}
-          >
-            Prospero
-          </Typography>
+          <Link href={"/works/prospero"}>
+            <Typography
+              variant="h1"
+              fontSize={fontSizes}
+              sx={{
+                fontStyle: "italic",
+                "&:hover": {
+                  ml: 2,
+                },
+                transition: `all 0.1s ease-in`,
+              }}
+            >
+              Prospero
+            </Typography>
+          </Link>
           <img
             src={"https://i.ibb.co/sV9nX4Z/Screenshot-189.png"}
             className={ProjectStyles.imageHover}
