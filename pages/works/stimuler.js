@@ -20,11 +20,16 @@ import ProjectImage4 from "../../public/works/stimuler/SS4.png";
 import ProjectImage5 from "../../public/works/stimuler/SS5.png";
 import Mood from "../../public/works/stimuler/moodboard/mood.png";
 import Layout from "../../Components/Layout";
-
+import {useMediaQuery } from "@mui/material"
 const Project = () => {
+    const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Layout>
-      <Box className={WorkStyles.FullSize} id="GScroll">
+      <Container
+        disableGutters={!isMobile}
+        className={WorkStyles.FullSize}
+        id="GScroll"
+      >
         <Box className={WorkStyles.FullSize}>
           <Box
             className={WorkStyles.backgroundProject}
@@ -61,7 +66,7 @@ const Project = () => {
                 Visit Site <RiExternalLinkLine />
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={12} md={4} lg={4}>
+            <Grid item xs={12} sm={12} md={4} lg={4} sx={{mb:isMobile?10:0}}>
               <Typography variant="h4" sx={{ mt: 4 }}>
                 Date
               </Typography>
@@ -124,7 +129,7 @@ const Project = () => {
               >
                 Typography
               </Typography>
-              <Typography variant="h2">B O S C H</Typography>
+              <Typography variant="h2">G I N G E R</Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={6}>
               <Typography
@@ -141,7 +146,7 @@ const Project = () => {
                   sx={{
                     bgcolor: "#ffffff",
                     color: "black!important",
-                    width: 400,
+                    width: isMobile ? "100%" : 400,
                     height: 60,
                     mb: 2,
                     "&:hover": {
@@ -156,7 +161,7 @@ const Project = () => {
                   className="SpaceFont"
                   sx={{
                     bgcolor: "#2b2b2b",
-                    width: 400,
+                    width: isMobile ? "100%" : 400,
                     height: 60,
                     mb: 2,
                     "&:hover": {
@@ -225,7 +230,7 @@ const Project = () => {
             <Image src={ProjectImage4} alt="" />
           </Container>
         </Box>
-      </Box>
+      </Container>
     </Layout>
   );
 };

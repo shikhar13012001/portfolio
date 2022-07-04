@@ -1,28 +1,34 @@
 import React from "react";
 import { Grid, Typography, Button, styled, Container } from "@mui/material";
 import AboutStyles from "../../styles/About.module.css";
-import { fontSizes } from "../../fonts";
+import { fontSizes,FontSizes } from "../../fonts";
 import Image from "next/image";
 import ME from "../../public/images/demo.png";
 import Marquee from "react-fast-marquee";
 import { BsFillCircleFill } from "react-icons/bs";
+import {useMediaQuery} from "@mui/material"
 
 const About = () => {
   const StyledButton = styled(Button)({
     border: `1px solid #1a2430`,
     borderRadius: "5px",
   });
+  const isMobile = useMediaQuery("(max-width:600px)");
   return (
-    <Container disableGutters={true} className={AboutStyles.fullSize}>
+    <Container disableGutters={!isMobile} className={AboutStyles.fullSize}>
       <Grid container columns={12} className={AboutStyles.fullSize}>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           <Typography variant="h1" fontSize={fontSizes}>
             About
           </Typography>
           <br />
           <br />
           <br />
-          <Typography variant="h5" className="SpaceFont">
+          <Typography
+            variant="h5"
+            className="SpaceFont"
+            fontSize={FontSizes.about}
+          >
             Im a Digital Designer & Visual Developer based in Lucknow, India.
             Creating digital experiences with an eye for design and motion.
           </Typography>
@@ -31,6 +37,7 @@ const About = () => {
           <Typography
             variant="h6"
             className={`SpaceFont ${AboutStyles.description}`}
+            fontSize={FontSizes.ProjectDescription}
           >
             Being creative with digital and motion design for websites is what
             I’ve been doing for the past few months of College. With just UI /
@@ -47,12 +54,19 @@ const About = () => {
             anymore. Now I can develop my own digital creations into an online
             experience, while having full control of design, motion and build.
           </Typography>
-          <Typography variant="h2" className={AboutStyles.Rtitle}>
+          <Typography variant="h2" className={AboutStyles.Rtitle} fontSize={fontSizes}>
             FIND MY <span className="important-word">RESUME</span> HERE
           </Typography>
           <StyledButton>Download Resume</StyledButton>
         </Grid>
-        <Grid item xs={6} className={AboutStyles.AboutImage}>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          className={AboutStyles.AboutImage}
+        >
           <Image
             src={ME}
             alt="shikhar13012001"

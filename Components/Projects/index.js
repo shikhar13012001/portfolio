@@ -12,7 +12,11 @@ import ProjectStyles from "../../styles/Project.module.css";
 import { fontSizes } from "../../fonts";
 import Link from "next/link";
 import { gsap } from "gsap";
+import {useMediaQuery} from '@mui/material'
 const Projects = () => {
+
+
+  const isMobile = useMediaQuery("(max-width:600px)");
   React.useEffect(() => {
     const items = document.querySelectorAll(".text_hover");
 
@@ -44,7 +48,7 @@ const Projects = () => {
   }, []);
   return (
     <Container
-      disableGutters={true}
+      disableGutters={!isMobile}
       sx={{ width: "100%", minHeight: "100vh", mt: 20, mb: 10 }}
     >
       <Typography variant="h4" className="SpaceFont" sx={{ mb: 1 }}>
@@ -53,7 +57,7 @@ const Projects = () => {
       <Typography
         variant="body1"
         className="GrayColor SpaceFont"
-        sx={{ width: "30%", mb: 15 }}
+        sx={{ width: isMobile?"100%":"30%", mb: 15 }}
       >
         Here are some of the projects I have worked on. Feel free to check out
         some of my work. Few Projects are not hosted because of the cost of

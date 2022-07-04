@@ -20,11 +20,16 @@ import ProjectImage4 from "../../public/works/prospero/SS4.png";
 import ProjectImage5 from "../../public/works/prospero/SS5.png";
 import ProjectImage6 from "../../public/works/prospero/SS6.png";
 import Layout from "../../Components/Layout";
-
+import { useMediaQuery } from "@mui/material";
 const Project = () => {
+  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Layout>
-      <Box className={WorkStyles.FullSize} id="GScroll">
+      <Container
+        disableGutters={!isMobile}
+        className={WorkStyles.FullSize}
+        id="GScroll"
+      >
         <Box className={WorkStyles.FullSize}>
           <Box
             className={WorkStyles.backgroundProject}
@@ -65,7 +70,14 @@ const Project = () => {
                 Visit Site <RiExternalLinkLine />
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={12} md={4} lg={4}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={4}
+              lg={4}
+              sx={{ mb: isMobile ? 10 : 0 }}
+            >
               <Typography variant="h4" sx={{ mt: 4 }}>
                 Date
               </Typography>
@@ -144,7 +156,7 @@ const Project = () => {
                   sx={{
                     bgcolor: "#23F800",
                     color: "white!important",
-                    width: 400,
+                    width: isMobile ? "100%" : 400,
                     height: 60,
                     mb: 2,
                     "&:hover": {
@@ -160,7 +172,7 @@ const Project = () => {
                   sx={{
                     bgcolor: "#EA008A",
                     color: "white!important",
-                    width: 400,
+                    width: isMobile ? "100%" : 400,
                     height: 60,
                     mb: 2,
                     "&:hover": {
@@ -176,7 +188,7 @@ const Project = () => {
                   sx={{
                     bgcolor: "#B026FF",
                     color: "white!important",
-                    width: 400,
+                    width: isMobile ? "100%" : 400,
                     height: 60,
                     mb: 2,
                     "&:hover": {
@@ -191,7 +203,7 @@ const Project = () => {
                   className="SpaceFont"
                   sx={{
                     bgcolor: "#2b2b2b",
-                    width: 400,
+                    width: isMobile ? "100%" : 400,
                     height: 60,
                     mb: 2,
                     "&:hover": {
@@ -243,7 +255,7 @@ const Project = () => {
             <Image src={ProjectImage6} alt="" />
           </Container>
         </Box>
-      </Box>
+      </Container>
     </Layout>
   );
 };

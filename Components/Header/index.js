@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Typography } from "@mui/material";
 import HeaderStyles from "../../styles/Header.module.css";
 import { BsGithub } from "react-icons/bs";
+import { FontSizes } from "../../fonts";
 const Header = () => {
   return (
     <Grid container columns={12} className={HeaderStyles.headerSize}>
@@ -14,9 +15,9 @@ const Header = () => {
         className={HeaderStyles.sideBorder}
       >
         <BsGithub size={40} />{" "}
-        <span className="important-word margin-left-short SpaceFont">
-          @shikhar13012001
-        </span>
+        <Typography className="margin-left-short" fontSize={FontSizes.para}>
+          <span className="important-word SpaceFont">@shikhar13012001</span>
+        </Typography>
       </Grid>
       <Grid
         item
@@ -30,6 +31,7 @@ const Header = () => {
           variant="body1"
           sx={{ fontWeight: "bold" }}
           className="SpaceFont"
+          fontSize={FontSizes.para}
         >
           ABOUT
         </Typography>
@@ -37,6 +39,7 @@ const Header = () => {
           variant="body1"
           sx={{ fontWeight: "bold" }}
           className="SpaceFont"
+          fontSize={FontSizes.para}
         >
           WORK
         </Typography>
@@ -52,6 +55,7 @@ const Header = () => {
         <Typography
           variant="body1"
           sx={{ fontWeight: "bold" }}
+          fontSize={FontSizes.para}
           className="SpaceFont"
         >
           GET IN TOUCH

@@ -7,10 +7,11 @@ import {
   InputBase,
   Button,
 } from "@mui/material";
-import { fontSizes } from "../../fonts";
+import { fontSizes,FontSizes } from "../../fonts";
 import Flower from "../../public/flower.svg";
 import Image from "next/image";
 import ContactStyles from "../../styles/Contact.module.css";
+import {useMediaQuery} from "@mui/material"
 const StyledTextField = styled(TextField)({
   width: "80%",
   minHeight: 60,
@@ -27,22 +28,28 @@ const StyledTextField = styled(TextField)({
   },
 });
 const Contact = () => {
+  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Grid
       container
       columns={12}
-      sx={{ minHeight: "80vh", mt: 20, pl: 10 }}
+      sx={{ minHeight: "80vh", mt: 20, pl: isMobile ? 0 : 10 }}
       className={ContactStyles.Border}
     >
       <Grid item xs={12} sm={12} md={7} lg={7} sx={{ pt: 10 }}>
         <Image src={Flower} alt="flower" className={ContactStyles.rotate} />
-        <Typography variant="h1" fontSize={fontSizes.sm}>
+        <Typography
+          variant="h1"
+          fontSize={FontSizes.Heading}
+          sx={{ textAlign: isMobile ? "center" : null }}
+        >
           Let&apos;s get in touch
         </Typography>
         <Typography
           variant="body1"
           className="GrayColor SpaceFont"
-          sx={{ width: "60%", margin: 4 }}
+          sx={{ width: isMobile ? "100%" : "60%", margin: isMobile ? 2 : 4 }}
+          fontSize={FontSizes.ProjectDescription}
         >
           I am available for a limited number of freelance projects this year.
           Looking for a DIGITAL DESIGNER VISUAL DEVELOPER? Just get in touch.
@@ -76,6 +83,7 @@ const Contact = () => {
           variant="contained"
           color="primary"
           className={`SpaceFont ${ContactStyles.formBtn}`}
+          sx={{ mb: isMobile ? 2 : 0 }}
         >
           Submit
         </Button>

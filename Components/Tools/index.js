@@ -10,6 +10,7 @@ import {
 import { fontSizes } from "../../fonts";
 import ToolsStyle from "../../styles/Tools.module.css";
 import Image from "next/image";
+import {useMediaQuery} from '@mui/material'
 const skills = [
   {
     name: "Next js",
@@ -56,6 +57,7 @@ const skills = [
   },
 ];
 const Tools = () => {
+  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Box sx={{ width: "100%", minHeight: "40vh", mt: 20 }}>
       <Container>
@@ -65,7 +67,11 @@ const Tools = () => {
         <Typography
           variant="subtitle1"
           className="GrayColor SpaceFont"
-          sx={{ width: "60%" }}
+          sx={{ width: "60%",
+        "@media (max-width: 600px)": {
+          width: "100%",
+        }
+        }}
         >
           There are many tools that can be used for design, animation and visual
           development. But these are the tools I prefer to use to build the best
@@ -84,12 +90,15 @@ const Tools = () => {
           mt: 10,
           mb: 10,
           gap: 6,
+          "@media (max-width: 600px)": {
+            justifyContent: "center",
+          }
         }}
       >
         {skills.map((item, key) => (
-          <Box key={key} sx={{ width: 300 }}>
+          <Box key={key} sx={{ width: isMobile?"90%":300 }}>
             <Grid container columns={12}>
-              <Grid item xs={12} sx={{ width: "100%", height: 200 }}>
+              <Grid item xs={12} sx={{ width: "100%", height: isMobile?300:200 }}>
                 <Image
                   placeholder={require(`../../public/gradients/purple.png`)}
                   src={require(`../../public/gradients/${key + 1}.png`)}
