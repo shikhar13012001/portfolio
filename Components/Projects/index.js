@@ -10,13 +10,12 @@ const Projects = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   React.useEffect(() => {
     const items = document.querySelectorAll(".text_hover");
-    console.log(isMobile);
+
     if (!isMobile) {
       items.forEach((el) => {
         const image = el.querySelector("img");
 
         el.addEventListener("mouseenter", (e) => {
-          console.log(e);
           gsap.to(image, {
             autoAlpha: 1,
             translateY: -100,
