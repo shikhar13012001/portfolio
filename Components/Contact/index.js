@@ -1,12 +1,10 @@
 import React from "react";
 import { Grid, TextField, Typography, styled, Button } from "@mui/material";
-import { fontSizes, FontSizes } from "../../fonts";
-import axios from "axios";
+import { FontSizes } from "../../fonts";
 import Flower from "../../public/flower.svg";
 import Image from "next/image";
 import ContactStyles from "../../styles/Contact.module.css";
 import { useMediaQuery } from "@mui/material";
-import { useRouter } from "next/router";
 const StyledTextField = styled(TextField)({
   width: "80%",
   minHeight: 60,
