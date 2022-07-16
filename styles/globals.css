@@ -29,7 +29,7 @@ span.important-word {
   margin-left: 20%;
 }
 .margin-left-short {
-  margin-left: 10%;
+  margin-left: 10%!important;
 }
 .heroCaption {
   margin-left: 10px;

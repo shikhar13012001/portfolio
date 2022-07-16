@@ -7,7 +7,7 @@ import ME from "../../public/images/demo.png";
 import Marquee from "react-fast-marquee";
 import { BsFillCircleFill } from "react-icons/bs";
 import { useMediaQuery } from "@mui/material";
-
+import Link from "next/link";
 const About = () => {
   const StyledButton = styled(Button)({
     border: `1px solid #1a2430`,
@@ -61,7 +61,12 @@ const About = () => {
           >
             FIND MY <span className="important-word">RESUME</span> HERE
           </Typography>
-          <StyledButton>Download Resume</StyledButton>
+
+          <StyledButton>
+            <a href="/files/RESUME.pdf" download style={{textDecoration:'none'}}>
+              Download Resume
+            </a>
+          </StyledButton>
         </Grid>
         <Grid
           item

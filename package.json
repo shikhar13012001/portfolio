@@ -17,6 +17,7 @@
     "@mui/material": "^5.8.5",
     "@mui/styles": "^5.8.4",
     "easy-scroll": "^0.7.0",
+    "fcommit": "^1.0.0",
     "framer-motion": "^6.3.16",
     "gsap": "^3.10.4",
     "next": "12.1.6",

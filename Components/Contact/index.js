@@ -1,17 +1,12 @@
 import React from "react";
-import {
-  Grid,
-  TextField,
-  Typography,
-  styled,
-  InputBase,
-  Button,
-} from "@mui/material";
+import { Grid, TextField, Typography, styled, Button } from "@mui/material";
 import { fontSizes, FontSizes } from "../../fonts";
+import axios from "axios";
 import Flower from "../../public/flower.svg";
 import Image from "next/image";
 import ContactStyles from "../../styles/Contact.module.css";
 import { useMediaQuery } from "@mui/material";
+import { useRouter } from "next/router";
 const StyledTextField = styled(TextField)({
   width: "80%",
   minHeight: 60,
@@ -59,13 +54,24 @@ const Contact = () => {
           Looking for a DIGITAL DESIGNER VISUAL DEVELOPER? Just get in touch.
         </Typography>
       </Grid>
-      <Grid item xs={12} sm={12} md={5} lg={5} className={ContactStyles.form}>
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={5}
+        lg={5}
+        className={ContactStyles.form}
+        component="form"
+        action="https://getform.io/f/ebec9532-ea83-4728-9a06-26dc8aba0bc1"
+        method="POST"
+      >
         <StyledTextField
           label="Name"
           placeholder="Name"
           inputProps={{
             className: "SpaceFont",
           }}
+          name="name"
         />
         <StyledTextField
           label="Email"
@@ -73,6 +79,7 @@ const Contact = () => {
           inputProps={{
             className: "SpaceFont",
           }}
+          name="email"
         />
         <StyledTextField
           label="Message"
@@ -82,9 +89,11 @@ const Contact = () => {
           inputProps={{
             className: "SpaceFont",
           }}
+          name="message"
         />
         <Button
           variant="contained"
+          type="submit"
           color="primary"
           className={`SpaceFont ${ContactStyles.formBtn}`}
           sx={{ mb: isMobile ? 2 : 0 }}

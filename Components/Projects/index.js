@@ -37,6 +37,7 @@ const Projects = () => {
         });
       });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <Container
@@ -62,7 +63,7 @@ const Projects = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
-          {/* <Link href="/works/black-bird-blog"> */}
+          <Link href="/works/black-bird-blog">
           <Typography
             variant="h1"
             fontSize={fontSizes}
@@ -76,7 +77,7 @@ const Projects = () => {
           >
             Black Bird Blog
           </Typography>
-          {/* </Link> */}
+          </Link>
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img

@@ -102,13 +102,21 @@ const Tools = () => {
               <Grid
                 item
                 xs={12}
-                sx={{ width: "100%", height: isMobile ? 300 : 200 }}
+                sx={{
+                  width: "100%",
+                  height: isMobile ? 300 : 200,
+                  overflow: "hidden",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
               >
                 <Image
                   placeholder={require(`../../public/gradients/purple.png`)}
                   src={require(`../../public/gradients/${key + 1}.png`)}
                   alt=""
                   objectPosition={"center"}
+                  priority
                 />
               </Grid>
               <Grid item xs={3} sx={{ width: "100%", mr: 1 }}>
