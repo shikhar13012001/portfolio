@@ -44,6 +44,7 @@ const Projects = () => {
       disableGutters={!isMobile}
       sx={{ width: "100%", minHeight: "100vh", mt: 20, mb: 10 }}
     >
+      <a name="projects"></a>
       <Typography variant="h4" className="SpaceFont" sx={{ mb: 1 }}>
         Projects
       </Typography>

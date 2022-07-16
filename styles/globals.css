@@ -4,6 +4,13 @@
   font-family: "Ginger";
   src: url("../fonts/Ginger.otf");
 }
+html{
+  scroll-behavior: smooth;
+  
+}
+a{
+  text-decoration: none;
+}
 .SpaceFont {
   font-family: "Space Grotesk", sans-serif !important;
 }

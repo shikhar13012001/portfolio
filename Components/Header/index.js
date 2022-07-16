@@ -33,16 +33,20 @@ const Header = () => {
         <Typography
           variant="body1"
           sx={{ fontWeight: "bold" }}
-          className="SpaceFont"
+          className="SpaceFont GrayColor"
           fontSize={FontSizes.para}
+          component="a"
+          href="#about"
         >
           ABOUT
         </Typography>
         <Typography
           variant="body1"
           sx={{ fontWeight: "bold" }}
-          className="SpaceFont"
+          className="SpaceFont GrayColor"
           fontSize={FontSizes.para}
+          component="a"
+          href="#projects"
         >
           WORK
         </Typography>
@@ -59,7 +63,9 @@ const Header = () => {
           variant="body1"
           sx={{ fontWeight: "bold" }}
           fontSize={FontSizes.para}
-          className="SpaceFont"
+          className="SpaceFont GrayColor"
+          component="a"
+          href="#contact"
         >
           GET IN TOUCH
         </Typography>

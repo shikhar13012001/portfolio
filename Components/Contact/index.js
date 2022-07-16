@@ -29,6 +29,7 @@ const Contact = () => {
       sx={{ minHeight: "80vh", mt: 20, pl: isMobile ? 0 : 10 }}
       className={ContactStyles.Border}
     >
+      <a name="contact"></a>
       <Grid item xs={12} sm={12} md={7} lg={7} sx={{ pt: 10 }}>
         <Image src={Flower} alt="flower" className={ContactStyles.rotate} />
         <Typography

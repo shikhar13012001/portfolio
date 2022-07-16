@@ -16,6 +16,7 @@ const About = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Container disableGutters={!isMobile} className={AboutStyles.fullSize}>
+      <a name="about"></a>
       <Grid container columns={12} className={AboutStyles.fullSize}>
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <Typography variant="h1" fontSize={fontSizes}>
