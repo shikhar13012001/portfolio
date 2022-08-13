@@ -3,7 +3,7 @@ import { Grid, Typography, Button, styled, Container } from "@mui/material";
 import AboutStyles from "../../styles/About.module.css";
 import { fontSizes, FontSizes } from "../../fonts";
 import Image from "next/image";
-import ME from "../../public/images/demo.png";
+import ME from "../../public/images/profile.png";
 import Marquee from "react-fast-marquee";
 import { BsFillCircleFill } from "react-icons/bs";
 import { useMediaQuery } from "@mui/material";
@@ -51,7 +51,7 @@ const About = () => {
             variant="h6"
             className={`SpaceFont ${AboutStyles.description}`}
           >
-            By embracing code and proper tools. I'm not just the designer
+            By embracing code and proper tools. I&apos;m not just the designer
             anymore. Now I can develop my own digital creations into an online
             experience, while having full control of design, motion and build.
           </Typography>
@@ -64,7 +64,11 @@ const About = () => {
           </Typography>
 
           <StyledButton>
-            <a href="/files/RESUME.pdf" download style={{textDecoration:'none'}}>
+            <a
+              href="/files/RESUME.pdf"
+              download
+              style={{ textDecoration: "none" }}
+            >
               Download Resume
             </a>
           </StyledButton>

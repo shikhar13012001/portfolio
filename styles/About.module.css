@@ -32,12 +32,13 @@
   border-top-left-radius: 50% !important;
   border-top-right-radius: 50% !important;
   width: 100% !important;
+  
   object-fit: cover !important;
 }
 
 .Marquee {
   height: 100px !important;
-  width: 466px !important;
+  width: 100% !important;
 }
 .Circle {
   fill: #7176e7 !important;
