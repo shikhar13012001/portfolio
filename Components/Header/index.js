@@ -5,6 +5,7 @@ import { BsGithub } from "react-icons/bs";
 import { FontSizes } from "../../fonts";
 import { useMediaQuery } from "@mui/material";
 import Drawer from "../Drawer";
+import Link from "next/link";
 const Header = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   return !isMobile ? (
@@ -18,9 +19,11 @@ const Header = () => {
         className={HeaderStyles.sideBorder}
       >
         <BsGithub size={40} />{" "}
-        <Typography className="margin-left-short" fontSize={FontSizes.para}>
-          <span className="important-word SpaceFont">@shikhar13012001</span>
-        </Typography>
+        <Link href="github.com/shikhar13012001">
+          <Typography className="margin-left-short" fontSize={FontSizes.para}>
+            <span className="important-word SpaceFont">@shikhar13012001</span>
+          </Typography>
+        </Link>
       </Grid>
       <Grid
         item
