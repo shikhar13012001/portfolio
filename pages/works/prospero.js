@@ -36,17 +36,12 @@ const Project = () => {
         className={WorkStyles.FullSize}
         id="GScroll"
       >
-        <Box className={WorkStyles.FullSize}>
+        <Box sx={{ mb: 3 }}>
           <Box
             className={WorkStyles.backgroundProject}
             sx={{ backgroundImage: `url("${Prospero.src}")` }}
           >
-            <Typography
-              variant="h1"
-              fontSize={{ lg: 200, md: 180, sm: 140, xs: 100 }}
-            >
-              Prospero
-            </Typography>
+            <Typography variant="h1">Prospero</Typography>
           </Box>
         </Box>
         <Container disableGutters={true} className={WorkStyles.description}>
@@ -224,7 +219,7 @@ const Project = () => {
           </Grid>
         </Container>
         <Box
-          className={`${WorkStyles.FullSize} ${WorkStyles.MoodBoard}`}
+          className={`${WorkStyles.MoodBoard}`}
           sx={{ backgroundImage: `url("${Mood.src}")` }}
         ></Box>
         <Box className={WorkStyles.FullSize} sx={{ mt: 20 }}>

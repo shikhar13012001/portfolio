@@ -17,7 +17,6 @@
 .MoodBoard {
   width: 100% !important;
   height: 70vh !important;
-
   background-size: contain !important;
   background-repeat: repeat !important;
   background-position: center !important;
@@ -31,5 +30,11 @@
 @media (max-width: 768px) {
   .ProjectDescrption {
     width: 100% !important;
+  }
+  .MoodBoard{
+    height: 30vh!important;
+  }
+  .backgroundProject{
+    height: 40vh!important;
   }
 }

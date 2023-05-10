@@ -2,7 +2,14 @@ import "../styles/globals.css";
 import React from "react";
 import { Box } from "@mui/material";
 import easyScroll from "easy-scroll";
+import {
+  createTheme,
+  ThemeProvider,
+  responsiveFontSizes,
+} from "@mui/material/styles";
+
 function MyApp({ Component, pageProps }) {
+  const theme = responsiveFontSizes(createTheme());
   React.useEffect(() => {
     const pointer = document.createElement("div");
     pointer.id = "pointer-dot";
@@ -97,9 +104,11 @@ function MyApp({ Component, pageProps }) {
     });
   }, []);
   return (
-    <Box sx={{ width: "100%", minHeight: "100vh" }} id="scroll-container">
-      <Component {...pageProps} />
-    </Box>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ width: "100%", minHeight: "100vh" }} id="scroll-container">
+        <Component {...pageProps} />
+      </Box>
+    </ThemeProvider>
   );
 }
 

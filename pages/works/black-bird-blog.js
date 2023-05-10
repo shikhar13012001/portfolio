@@ -37,7 +37,7 @@ const Project = () => {
         className={WorkStyles.FullSize}
         id="GScroll"
       >
-        <Box className={WorkStyles.FullSize}>
+        <Box sx={{ mb: 3 }}>
           <Box
             className={WorkStyles.backgroundProject}
             sx={{
@@ -46,12 +46,7 @@ const Project = () => {
               backgroundRepeat: "no-repeat!important",
             }}
           >
-            <Typography
-              variant="h1"
-              fontSize={{ lg: 200, md: 180, sm: 140, xs: 100 }}
-            >
-              Black Bird
-            </Typography>
+            <Typography variant="h1">Black Bird</Typography>
           </Box>
         </Box>
         <Container disableGutters={true} className={WorkStyles.description}>
@@ -230,7 +225,7 @@ const Project = () => {
           </Grid>
         </Container>
         <Box
-          className={`${WorkStyles.FullSize} ${WorkStyles.MoodBoard}`}
+          className={`${WorkStyles.MoodBoard}`}
           sx={{ backgroundImage: `url(${Mood.src})` }}
         ></Box>
         <Box className={WorkStyles.FullSize} sx={{ mt: 20 }}>
