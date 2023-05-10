@@ -55,6 +55,22 @@ const skills = [
     description:
       "TypeScript is a superset of JavaScript that compiles to plain JavaScript",
   },
+  {
+    name: "Sanity",
+    description:
+      "Sanity is a headless CMS that lets you manage content with a structured content model",
+  },
+  {
+    name: "Typesense",
+    description:
+      "Typesense is a fast, typo-tolerant search engine, easier than elastic search",
+  },
+
+  {
+    name: "Vercel",
+    description:
+      "Vercel is a cloud platform for static sites and Serverless Functions that fits perfectly with your workflow.",
+  },
 ];
 const Tools = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -121,7 +137,7 @@ const Tools = () => {
               </Grid>
               <Grid item xs={3} sx={{ width: "100%", mr: 1 }}>
                 <Typography variant="h2" className="GrayColor">
-                  0{key + 1}
+                  {key+1<10?`0${key + 1}`:`${key + 1}`}
                 </Typography>
               </Grid>
               <Grid item xs={8} sx={{ width: "100%" }}>

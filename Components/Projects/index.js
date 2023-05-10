@@ -64,20 +64,54 @@ const Projects = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
-          <Link href="/works/black-bird-blog">
-          <Typography
-            variant="h1"
-            fontSize={fontSizes}
-            sx={{
-              fontStyle: "italic",
-              "&:hover": {
-                ml: 2,
-              },
-              transition: `all 0.1s ease-in`,
-            }}
-          >
-            Black Bird Blog
+          <Link href="/works/futurepedia">
+            <Typography
+              variant="h1"
+              fontSize={fontSizes}
+              sx={{
+                fontStyle: "italic",
+                "&:hover": {
+                  ml: 2,
+                },
+                transition: `all 0.1s ease-in`,
+              }}
+            >
+              Futurepedia
+            </Typography>
+          </Link>
+
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={"https://i.ibb.co/2t0Yg3B/background.png"}
+            className={ProjectStyles.imageHover}
+            alt="pan"
+          />
+        </Grid>
+        <Divider
+          sx={{ backgroundColor: "#1e2435", width: "100%", mt: 3, mb: 3 }}
+        />
+      </Grid>
+      <Grid container columns={12}>
+        <Grid item xs={12} sm={1} md={1} lg={1}>
+          <Typography variant="h6" className="SpaceFont">
+            (02)
           </Typography>
+        </Grid>
+        <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
+          <Link href="/works/black-bird-blog">
+            <Typography
+              variant="h1"
+              fontSize={fontSizes}
+              sx={{
+                fontStyle: "italic",
+                "&:hover": {
+                  ml: 2,
+                },
+                transition: `all 0.1s ease-in`,
+              }}
+            >
+              Black Bird Blog
+            </Typography>
           </Link>
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -94,7 +128,7 @@ const Projects = () => {
       <Grid container columns={12}>
         <Grid item xs={12} sm={1} md={1} lg={1}>
           <Typography variant="h6" className="SpaceFont">
-            (02)
+            (03)
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
@@ -126,7 +160,7 @@ const Projects = () => {
       <Grid container columns={12}>
         <Grid item xs={12} sm={1} md={1} lg={1}>
           <Typography variant="h6" className="SpaceFont">
-            (03)
+            (04)
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
@@ -158,7 +192,7 @@ const Projects = () => {
       <Grid container columns={12}>
         <Grid item xs={12} sm={1} md={1} lg={1}>
           <Typography variant="h6" className="SpaceFont">
-            (04)
+            (05)
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
@@ -190,7 +224,7 @@ const Projects = () => {
       <Grid container columns={12}>
         <Grid item xs={12} sm={1} md={1} lg={1}>
           <Typography variant="h6" className="SpaceFont">
-            (05)
+            (06 )
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
