@@ -23,6 +23,10 @@ const AnimatedCharacters = (props) => {
   // Framer Motion variant object, for controlling animation
   const isMobile = useMediaQuery("(max-width:600px)");
   const MobileResponsive = isMobile ? {} : fontSizes;
+  const MobileResponsiveVariant = isMobile ? "h2" : "h1";
+  const TypographyVariant = props.variant
+    ? props.variant
+    : MobileResponsiveVariant;
   const item = {
     hidden: {
       y: "200%",
@@ -54,7 +58,7 @@ const AnimatedCharacters = (props) => {
 
   return (
     <Typography
-      variant={isMobile ? "h2" : "h1"}
+      variant={TypographyVariant}
       className={styles.textAlign}
       fontSize={MobileResponsive}
     >

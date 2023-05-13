@@ -58,7 +58,7 @@ export default function SwipeableTemporaryDrawer() {
         variants={container}
       >
         {placeholderText.map((item, index) => {
-          return <AnimatedText {...item} key={index} />;
+          return <AnimatedText {...item} key={index} variant="h1" />;
         })}
       </motion.div>
     </Box>

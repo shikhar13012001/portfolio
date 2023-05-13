@@ -1,10 +1,16 @@
+import {
+  Button,
+  Grid,
+  TextField,
+  Typography,
+  styled,
+  useMediaQuery,
+} from "@mui/material";
+import Image from "next/image";
 import React from "react";
-import { Grid, TextField, Typography, styled, Button } from "@mui/material";
 import { FontSizes } from "../../fonts";
 import Flower from "../../public/flower.svg";
-import Image from "next/image";
 import ContactStyles from "../../styles/Contact.module.css";
-import { useMediaQuery } from "@mui/material";
 const StyledTextField = styled(TextField)({
   width: "80%",
   minHeight: 60,
@@ -46,7 +52,7 @@ const Contact = () => {
             width: isMobile ? "100%" : "60%",
             padding: isMobile ? "0 20px" : null,
             textAlign: isMobile ? "justify" : null,
-            mb:3
+            mb: 3,
           }}
           fontSize={FontSizes.ProjectDescription}
         >
