@@ -46,6 +46,7 @@ const Contact = () => {
             width: isMobile ? "100%" : "60%",
             padding: isMobile ? "0 20px" : null,
             textAlign: isMobile ? "justify" : null,
+            mb:3
           }}
           fontSize={FontSizes.ProjectDescription}
         >

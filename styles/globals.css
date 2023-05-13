@@ -4,11 +4,10 @@
   font-family: "Ginger";
   src: url("../fonts/Ginger.otf");
 }
-html{
+html {
   scroll-behavior: smooth;
-  
 }
-a{
+a {
   text-decoration: none;
 }
 .SpaceFont {
@@ -33,10 +32,10 @@ span.important-word {
 }
 
 .margin-left {
-  margin-left:20%!important;
+  margin-left: 20% !important;
 }
 .margin-left-short {
-  margin-left: 10%!important;
+  margin-left: 10% !important;
 }
 .heroCaption {
   margin-left: 10px;
@@ -82,4 +81,20 @@ a {
 .layout {
   width: 100%;
   min-height: 100vh;
+}
+
+.circular-text {  
+  margin: 20px;
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

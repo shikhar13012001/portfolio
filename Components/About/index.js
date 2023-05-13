@@ -1,13 +1,18 @@
-import React from "react";
-import { Grid, Typography, Button, styled, Container } from "@mui/material";
-import AboutStyles from "../../styles/About.module.css";
-import { fontSizes, FontSizes } from "../../fonts";
+import {
+  Button,
+  Container,
+  Grid,
+  Typography,
+  styled,
+  useMediaQuery,
+} from "@mui/material";
 import Image from "next/image";
-import ME from "../../public/images/profile.png";
+import React from "react";
 import Marquee from "react-fast-marquee";
 import { BsFillCircleFill } from "react-icons/bs";
-import { useMediaQuery } from "@mui/material";
-import Link from "next/link";
+import { FontSizes, fontSizes } from "../../fonts";
+import ME from "../../public/images/profile.png";
+import AboutStyles from "../../styles/About.module.css";
 const About = () => {
   const StyledButton = styled(Button)({
     border: `1px solid #1a2430`,

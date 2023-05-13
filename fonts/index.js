@@ -1,7 +1,7 @@
 export const fontSizes = {
   lg: 115,
   md: 100,
-  sm: 75,
+  sm: 70,
   xs: 50,
 };
 

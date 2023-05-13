@@ -1,7 +1,8 @@
-import React from "react";
+import { Typography, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
-import { Typography } from "@mui/material";
-import { fontSizes, FontSizes } from "../../fonts";
+import React from "react";
+import { fontSizes } from "../../fonts";
+import styles from "../../styles/AnimatedText.module.css";
 // Word wrapper
 const Wrapper = (props) => {
   // We'll do this to prevent wrapping of words using CSS
@@ -20,7 +21,8 @@ const tagMap = {
 // individual character animations
 const AnimatedCharacters = (props) => {
   // Framer Motion variant object, for controlling animation
-
+  const isMobile = useMediaQuery("(max-width:600px)");
+  const MobileResponsive = isMobile ? {} : fontSizes;
   const item = {
     hidden: {
       y: "200%",
@@ -51,7 +53,11 @@ const AnimatedCharacters = (props) => {
   // Get the tag name from tagMap
 
   return (
-    <Typography variant="h1" fontSize={fontSizes}>
+    <Typography
+      variant={isMobile ? "h2" : "h1"}
+      className={styles.textAlign}
+      fontSize={MobileResponsive}
+    >
       {words.map((word, index) => {
         return (
           // Wrap each word in the Wrapper component

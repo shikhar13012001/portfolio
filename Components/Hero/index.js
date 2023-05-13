@@ -1,12 +1,8 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../../styles/Home.module.css";
-import { Container, Typography } from "@mui/material";
-import { fontSizes, FontSizes } from "../../fonts";
-import React from "react";
+import { Container } from "@mui/material";
 import { motion } from "framer-motion";
+import React from "react";
+import styles from "../../styles/Home.module.css";
 import AnimatedText from "../AnimatedText";
-import { useMediaQuery } from "@mui/material";
 
 const placeholderText = [
   { type: "heading1", text: "WELCOME TO THE ", color: "white" },
@@ -21,7 +17,6 @@ const container = {
   },
 };
 export default function Home() {
-  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Container className={`${styles.center} ${styles.fullSize}`}>
       <motion.div

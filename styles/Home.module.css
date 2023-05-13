@@ -8,3 +8,10 @@
   width: 100% !important;
   min-height: 80vh !important;
 }
+
+@media screen and (max-width: 768px) {
+  .fullSize {
+    width: 100% !important;
+    min-height: 60vh !important;
+  }
+}

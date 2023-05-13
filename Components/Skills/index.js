@@ -13,7 +13,7 @@ const Skills = () => {
     },
   });
   return (
-    <Box sx={{ width: "100%", minHeight: "30vh", mt: 20 }}>
+    <Box sx={{ width: "100%", minHeight: "30vh", mt: 5 }}>
       <Marquee
         gradient={false}
         style={{ width: "100%", height: 200, overflow: "hidden" }}

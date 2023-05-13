@@ -32,7 +32,7 @@
   border-top-left-radius: 50% !important;
   border-top-right-radius: 50% !important;
   width: 100% !important;
-  
+
   object-fit: cover !important;
 }
 
@@ -50,5 +50,9 @@
   .Marquee {
     height: 100px !important;
     width: 100% !important;
+  }
+  .AboutImage {
+    margin-top: 40px;
+    height: 300px !important;
   }
 }

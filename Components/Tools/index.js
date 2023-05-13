@@ -75,7 +75,7 @@ const skills = [
 const Tools = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
-    <Box sx={{ width: "100%", minHeight: "40vh", mt: 20 }}>
+    <Box sx={{ width: "100%", minHeight: "40vh", mt: 8 }}>
       <Container>
         <Typography variant="h5" id="circular-text" className="SpaceFont">
           Tools / Libraries

@@ -1,0 +1,11 @@
+.textAlign{
+
+}
+@media screen and (max-width: 768px) {
+    .textAlign{
+        text-align: center !important;
+    }
+    
+}
+
+/* Path: styles\AnimatedText.module.css */
