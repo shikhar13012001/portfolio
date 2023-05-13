@@ -36,7 +36,7 @@ export const getServerSideProps = async ({ res }) => {
     "stimuler",
   ];
   const dynamicPages = WorkPaths.map((work) => `/works/${work}`);
-  const pages = [...staticPages, ...dynamicPages];
+  const pages = [...staticPages, ...dynamicPages,'/'];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -48,7 +48,7 @@ export const getServerSideProps = async ({ res }) => {
     >
         ${pages
           .map((page) => {
-            const path = page === "index.js" ? "/" : page;
+            const path =  page;
             return `
                     <url>
                         <loc>${baseUrl}${path}</loc>
