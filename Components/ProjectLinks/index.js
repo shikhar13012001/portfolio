@@ -2,9 +2,10 @@ import { Button, Stack } from "@mui/material";
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { RiExternalLinkLine } from "react-icons/ri";
-
+import { useMediaQuery } from "@mui/material";
 export default function ProjectLinks(props) {
-    const { websiteUrl, githubUrl} = props
+  const { websiteUrl, githubUrl } = props;
+  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Stack direction="column" spacing={1} sx={{ my: 2 }}>
       <Button
@@ -25,7 +26,6 @@ export default function ProjectLinks(props) {
         endIcon={<RiExternalLinkLine color="black" fill="black" size={20} />}
         href={websiteUrl}
         target="_blank"
-
       >
         Visit Site
       </Button>
