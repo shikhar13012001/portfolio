@@ -1,33 +1,34 @@
-import React from "react";
 import {
   Box,
-  Container,
-  Grid,
-  Typography,
-  Stack,
   Button,
+  Container,
   Divider,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
 } from "@mui/material";
-import WorkStyles from "../../styles/Works.module.css";
-import Git from "../../public/works/gissues/background.jpg";
-import { FontSizes } from "../../fonts";
-import { RiExternalLinkLine } from "react-icons/ri";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { RiExternalLinkLine } from "react-icons/ri";
+import Layout from "../../Components/Layout";
+import { FontSizes } from "../../fonts";
 import ProjectImage1 from "../../public/works/gissues/SS1.png";
 import ProjectImage2 from "../../public/works/gissues/SS2.png";
 import ProjectImage3 from "../../public/works/gissues/SS3.png";
 import ProjectImage4 from "../../public/works/gissues/SS4.png";
 import ProjectImage6 from "../../public/works/gissues/SS6.png";
+import Git from "../../public/works/gissues/background.jpg";
 import Mood from "../../public/works/gissues/moodboard/mood.png";
-import Layout from "../../Components/Layout";
-import { useMediaQuery } from "@mui/material";
+import WorkStyles from "../../styles/Works.module.css";
 
 const Project = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Layout
       title={"WORKS | GISSUES"}
-      description={`  Gissues is small side educational project build upon GitHub API
+      description={`Gissues is small side educational project build upon GitHub API
                 ( GraphQl ) to demonstrate the usage of graphql and Apollo
                 client in Next js.`}
     >
@@ -60,13 +61,15 @@ const Project = () => {
                 client in Next js. This project is to help new developer to step
                 in Open source
               </Typography>
-              <Typography
-                variant="subtitle1"
-                fontSize={FontSizes.para}
-                className="SpaceFont"
-              >
-                Visit Site <RiExternalLinkLine />
-              </Typography>
+              <Link href="https://gissues.vercel.app/" target="_blank">
+                <Typography
+                  variant="subtitle1"
+                  fontSize={FontSizes.para}
+                  className="SpaceFont"
+                >
+                  Visit Site <RiExternalLinkLine />
+                </Typography>
+              </Link>
             </Grid>
             <Grid
               item

@@ -1,14 +1,14 @@
-import { Container, Box } from "@mui/material";
-import Scroller from "../Components/Scroller";
-import Hero from "../Components/Hero";
+import { Box } from "@mui/material";
 import About from "../Components/About";
-import Skills from "../Components/Skills";
-import Tools from "../Components/Tools";
-import Projects from "../Components/Projects";
 import Contact from "../Components/Contact";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
+import Hero from "../Components/Hero";
 import Layout from "../Components/Layout";
+import Projects from "../Components/Projects";
+import Scroller from "../Components/Scroller";
+import Skills from "../Components/Skills";
+import Tools from "../Components/Tools";
 export default function Home() {
   return (
     <Layout>

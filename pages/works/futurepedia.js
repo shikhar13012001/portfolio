@@ -1,28 +1,28 @@
-import React from "react";
 import {
   Box,
-  Container,
-  Grid,
-  Typography,
-  Stack,
   Button,
+  Container,
   Divider,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
 } from "@mui/material";
-import WorkStyles from "../../styles/Works.module.css";
-import Git from "../../public/works/futurepedia/background.png";
-import { FontSizes } from "../../fonts";
-import { RiExternalLinkLine } from "react-icons/ri";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { RiExternalLinkLine } from "react-icons/ri";
+import Layout from "../../Components/Layout";
+import { FontSizes } from "../../fonts";
 import ProjectImage1 from "../../public/works/futurepedia/SS1.png";
 import ProjectImage2 from "../../public/works/futurepedia/SS2.png";
 import ProjectImage3 from "../../public/works/futurepedia/SS3.png";
 import ProjectImage4 from "../../public/works/futurepedia/SS4.png";
 import ProjectImage6 from "../../public/works/futurepedia/SS6.png";
 import ProjectImage7 from "../../public/works/futurepedia/SS7.png";
+import Git from "../../public/works/futurepedia/background.png";
 import Mood from "../../public/works/futurepedia/moodboard/moodboard.png";
-import Layout from "../../Components/Layout";
-import { useMediaQuery } from "@mui/material";
-import Link from "next/link";
+import WorkStyles from "../../styles/Works.module.css";
 const Project = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
@@ -35,16 +35,12 @@ const Project = () => {
         className={WorkStyles.FullSize}
         id="GScroll"
       >
-        <Box sx={{mb:3}}>
+        <Box sx={{ mb: 3 }}>
           <Box
             className={WorkStyles.backgroundProject}
             sx={{ backgroundImage: `url("${Git.src}")` }}
           >
-            <Typography
-              variant="h1" 
-            >
-              Futurepedia
-            </Typography>
+            <Typography variant="h1">Futurepedia</Typography>
           </Box>
         </Box>
         <Container disableGutters={true} className={WorkStyles.description}>
@@ -62,7 +58,7 @@ const Project = () => {
                 150,000+ AI enthusiasts getting new tools in their inbox every
                 week.
               </Typography>
-              <Link href="https://futurepedia.io/">
+              <Link href="https://futurepedia.io/" target="_blank">
                 <Typography
                   variant="subtitle1"
                   fontSize={FontSizes.para}

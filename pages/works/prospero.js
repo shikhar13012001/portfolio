@@ -1,26 +1,28 @@
-import React from "react";
 import {
   Box,
-  Container,
-  Grid,
-  Typography,
-  Stack,
   Button,
+  Container,
   Divider,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
 } from "@mui/material";
-import WorkStyles from "../../styles/Works.module.css";
-import Prospero from "../../public/works/prospero/SS5.png";
-import Mood from "../../public/works/prospero/moodboard/mood.png";
-import { FontSizes, fontSizes } from "../../fonts";
-import { RiExternalLinkLine } from "react-icons/ri";
 import Image from "next/image";
+import React from "react";
+import Layout from "../../Components/Layout";
+import ProjectLinks from "../../Components/ProjectLinks";
+import { FontSizes } from "../../fonts";
 import ProjectImage1 from "../../public/works/prospero/SS1.png";
 import ProjectImage2 from "../../public/works/prospero/SS10.png";
 import ProjectImage4 from "../../public/works/prospero/SS4.png";
-import ProjectImage5 from "../../public/works/prospero/SS5.png";
+import {
+  default as ProjectImage5,
+  default as Prospero,
+} from "../../public/works/prospero/SS5.png";
 import ProjectImage6 from "../../public/works/prospero/SS6.png";
-import Layout from "../../Components/Layout";
-import { useMediaQuery } from "@mui/material";
+import Mood from "../../public/works/prospero/moodboard/mood.png";
+import WorkStyles from "../../styles/Works.module.css";
 const Project = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
@@ -60,16 +62,10 @@ const Project = () => {
                 website. This is first ever major project that I undertook in my
                 college.
               </Typography>
-              <Typography
-                variant="subtitle1"
-                fontSize={FontSizes.para}
-                className="SpaceFont"
-                component={"a"}
-                target={"https://prospero.netlify.app/"}
-                href="https://prospero.netlify.app/"
-              >
-                Visit Site <RiExternalLinkLine />
-              </Typography>
+              <ProjectLinks
+                websiteUrl="https://prospero.netlify.app/"
+                githubUrl=""
+              />
             </Grid>
             <Grid
               item

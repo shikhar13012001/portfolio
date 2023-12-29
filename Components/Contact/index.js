@@ -77,6 +77,7 @@ const Contact = () => {
           inputProps={{
             className: "SpaceFont",
           }}
+          required
           name="name"
         />
         <StyledTextField
@@ -85,6 +86,7 @@ const Contact = () => {
           inputProps={{
             className: "SpaceFont",
           }}
+          required
           name="email"
         />
         <StyledTextField
@@ -95,6 +97,7 @@ const Contact = () => {
           inputProps={{
             className: "SpaceFont",
           }}
+          required
           name="message"
         />
         <Button

@@ -1,11 +1,46 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import { Box, Typography, Container, Grid, Divider } from "@mui/material";
-import ProjectStyles from "../../styles/Project.module.css";
-import { fontSizes } from "../../fonts";
-import Link from "next/link";
+import { Container, Typography, useMediaQuery } from "@mui/material";
 import { gsap } from "gsap";
-import { useMediaQuery } from "@mui/material";
+import React from "react";
+import ProjectItemLayout from "../ProjectLayout";
+const WorkPaths = [
+  {
+    id: "futurepedia",
+    name: "Futurepedia",
+    href: "/works/futurepedia",
+    image: "https://i.ibb.co/2t0Yg3B/background.png",
+    itemNumber: "01",
+  },
+  {
+    id: "black-bird-blog",
+    name: "Black Bird Blog",
+    href: "/works/black-bird-blog",
+    image: "https://i.ibb.co/pP48W4j/Blog.png",
+    itemNumber: "02",
+  },
+  {
+    id: "gissues",
+    name: "Gissues",
+    href: "/works/gissues",
+    image: "https://i.ibb.co/QmfJjfm/Gissues.png",
+    itemNumber: "03",
+  },
+  {
+    id: "museum-of-louvre",
+    name: "Museum of Louvre",
+    href: "/works/louvre-meaux",
+    image: "https://i.ibb.co/8PZbBWq/Museum.png",
+    itemNumber: "04",
+  },
+  {
+    id: "prospero",
+    name: "Prospero",
+    href: "/works/prospero",
+    image: "https://i.ibb.co/sV9nX4Z/Screenshot-189.png",
+    itemNumber: "05",
+  },
+];
+
 const Projects = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   React.useEffect(() => {
@@ -37,13 +72,10 @@ const Projects = () => {
         });
       });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <Container
-      disableGutters={!isMobile}
-      sx={{ width: "100%",   mt: 20, mb: 0 }}
-    >
+    <Container disableGutters={!isMobile} sx={{ width: "100%", mt: 20, mb: 0 }}>
       <a name="projects"></a>
       <Typography variant="h4" className="SpaceFont" sx={{ mb: 1 }}>
         Projects
@@ -57,41 +89,9 @@ const Projects = () => {
         some of my work. Few Projects are not hosted because of the cost of
         hosting.
       </Typography>
-      <Grid container columns={12}>
-        <Grid item xs={12} sm={1} md={1} lg={1}>
-          <Typography variant="h6" className="SpaceFont">
-            (01)
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={6} md={8} lg={11} className="text_hover">
-          <Link href="/works/futurepedia">
-            <Typography
-              variant="h1"
-              fontSize={fontSizes}
-              sx={{
-                fontStyle: "italic",
-                "&:hover": {
-                  ml: 2,
-                },
-                transition: `all 0.1s ease-in`,
-              }}
-            >
-              Futurepedia
-            </Typography>
-          </Link>
-
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={"https://i.ibb.co/2t0Yg3B/background.png"}
-            className={ProjectStyles.imageHover}
-            alt="pan"
-          />
-        </Grid>
-        <Divider
-          sx={{ backgroundColor: "#1e2435", width: "100%", mt: 3, mb: 3 }}
-        />
-      </Grid>
-     
+      {WorkPaths.map((work, index) => (
+        <ProjectItemLayout {...work} key={index} />
+      ))}
     </Container>
   );
 };
