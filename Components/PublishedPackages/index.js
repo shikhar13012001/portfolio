@@ -41,13 +41,14 @@ const PackageDetailsComponent = ({ packageDetail }) => {
         border: "1px solid #212121",
         p: 1,
         borderRadius: 2,
+        mb: 4,
         
       }}
     >
       <Box
         sx={{
           width: "100%",
-          height: 300,
+          minHeight: 300,
           overflow: "hidden",
           display: "flex",
           justifyContent: "center",
@@ -69,7 +70,7 @@ const PackageDetailsComponent = ({ packageDetail }) => {
         <Typography
           variant="body1"
           className="GrayColor SpaceFont"
-          sx={{ fontWeight: 0 , height:150}}
+          sx={{ fontWeight: 0 , minHeight:150}}
         >
           {description}
         </Typography>
