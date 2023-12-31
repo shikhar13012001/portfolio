@@ -14,7 +14,7 @@ const WorkPaths = [
   {
     id: "black-bird-blog",
     name: "Black Bird Blog",
-    href: "/works/black-bird-blog",
+    href: "/works/blackbird",
     image: "https://i.ibb.co/pP48W4j/Blog.png",
     itemNumber: "02",
   },
@@ -28,7 +28,7 @@ const WorkPaths = [
   {
     id: "museum-of-louvre",
     name: "Museum of Louvre",
-    href: "/works/louvre-meaux",
+    href: "/works/louvre",
     image: "https://i.ibb.co/8PZbBWq/Museum.png",
     itemNumber: "04",
   },

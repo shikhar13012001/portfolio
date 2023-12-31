@@ -98,3 +98,19 @@ a {
     transform: rotate(360deg);
   }
 }
+
+
+.vigentte{
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  pointer-events: none;
+  position: fixed;
+  width: 100%; 
+  bottom: 0;
+  height: 200px; 
+  z-index: 2;
+
+}

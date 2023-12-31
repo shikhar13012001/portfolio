@@ -68,7 +68,7 @@ const About = () => {
             FIND MY <span className="important-word">RESUME</span> HERE
           </Typography>
 
-          <StyledButton>
+          <StyledButton fullWidth={isMobile}>
             <a
               href="/files/RESUME.pdf"
               download

@@ -17,12 +17,12 @@
 .MoodBoard {
   width: 100% !important;
   height: 70vh !important;
-  background-size: contain !important;
+  background-size: cover !important;
   background-repeat: repeat !important;
   background-position: center !important;
   background-attachment: fixed !important;
-}
-
+} 
+ 
 .ProjectDescrption {
   width: 70% !important;
 }

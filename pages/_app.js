@@ -1,13 +1,13 @@
-import "../styles/globals.css";
-import React from "react";
 import { Box } from "@mui/material";
-import easyScroll from "easy-scroll";
 import {
-  createTheme,
   ThemeProvider,
+  createTheme,
   responsiveFontSizes,
 } from "@mui/material/styles";
-import { ScrollerMotion } from 'scroller-motion'
+import easyScroll from "easy-scroll";
+import React from "react";
+import { ScrollerMotion } from "scroller-motion";
+import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   const theme = responsiveFontSizes(createTheme());
   React.useEffect(() => {
@@ -46,8 +46,9 @@ function MyApp({ Component, pageProps }) {
       const getOption = (option) => {
         let defaultObj = {
           pointerColor: "#750c7e",
-          ringSize: 15,
+          ringSize: 20,
           ringClickSize: (options["ringSize"] || 15) - 5,
+          ringHoverSize: (options["ringSize"] || 15) + 5,
         };
         if (options[option] == undefined) {
           return defaultObj[option];
@@ -104,13 +105,14 @@ function MyApp({ Component, pageProps }) {
     });
   }, []);
   return (
-    <ScrollerMotion>
     <ThemeProvider theme={theme}>
-      <Box sx={{ width: "100%", minHeight: "100vh" }} id="scroll-container">
-        <Component {...pageProps} />
-      </Box>
+      <ScrollerMotion>
+        <Box sx={{ width: "100%", minHeight: "100vh" }} id="scroll-container">
+          <Component {...pageProps} />
+        </Box>
+      </ScrollerMotion>
+      <Box className="vigentte"></Box>
     </ThemeProvider>
-    </ScrollerMotion>
   );
 }
 
