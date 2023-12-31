@@ -7,7 +7,7 @@ import {
 import easyScroll from "easy-scroll";
 import React from "react";
 import { ScrollerMotion } from "scroller-motion";
-import "../styles/globals.css";
+import "../styles/globals.css"; 
 function MyApp({ Component, pageProps }) {
   const theme = responsiveFontSizes(createTheme());
   React.useEffect(() => {
@@ -105,7 +105,7 @@ function MyApp({ Component, pageProps }) {
     });
   }, []);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}> 
       <ScrollerMotion>
         <Box sx={{ width: "100%", minHeight: "100vh" }} id="scroll-container">
           <Component {...pageProps} />

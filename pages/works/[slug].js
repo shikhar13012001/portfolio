@@ -61,7 +61,7 @@ const ProjectDetailObject = {
   blackbird: BlackBirdBlog,
   futurepedia: Futurepedia,
   louvre: Louvre,
-//   prospero: Prospero,
+  //   prospero: Prospero,
 };
 
 const Project = ({ slug }) => {
@@ -79,20 +79,15 @@ const Project = ({ slug }) => {
     background,
   } = ProjectDetailObject[slug];
   const isMobile = useMediaQuery("(max-width:600px)");
-  console.log(Mood, background)
+  console.log(Mood, background);
 
   return (
     <Layout title={`WORKS | ${title.toUpperCase()}`} description={description}>
-      <Container 
-        className={WorkStyles.FullSize}
-        id="GScroll"
-      >
+      <Container className={WorkStyles.FullSize} id="GScroll">
         <Box sx={{ mb: 3 }}>
           <Box
             className={WorkStyles.backgroundProject}
-            sx={{ backgroundImage: `url("${background.blurDataURL}")`,
-          backdropFilter: "blur(10px)!important"
-        }}
+            sx={{ backgroundImage: `url("${background.blurDataURL}")` }}
           >
             <Typography variant="h1">{title}</Typography>
           </Box>
@@ -250,18 +245,18 @@ const Project = ({ slug }) => {
 export default Project;
 
 export async function getStaticPaths() {
-    const paths = [
-        { params: { slug: "gissues" } },
-        { params: { slug: "blackbird" } },
-        { params: { slug: "futurepedia" } },
-        { params: { slug: "louvre" } },
-        { params: { slug: "prospero" } },
-    ];
-    return { paths, fallback: false };
-    }
+  const paths = [
+    { params: { slug: "gissues" } },
+    { params: { slug: "blackbird" } },
+    { params: { slug: "futurepedia" } },
+    { params: { slug: "louvre" } },
+    { params: { slug: "prospero" } },
+  ];
+  return { paths, fallback: false };
+}
 
-    export async function getStaticProps({ params }) {
-    const { slug } = params;
-    if(!ProjectDetailObject[slug]) return { notFound: true };
-    return { props: { slug } };
-    }
+export async function getStaticProps({ params }) {
+  const { slug } = params;
+  if (!ProjectDetailObject[slug]) return { notFound: true };
+  return { props: { slug } };
+}
