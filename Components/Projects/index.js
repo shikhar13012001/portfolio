@@ -76,7 +76,7 @@ const Projects = () => {
   }, []);
   return (
     <Container disableGutters={!isMobile} sx={{ width: "100%", mt: 20, mb: 0 }}>
-      <a name="projects"></a>
+      <a id="projects"></a>
       <Typography variant="h4" className="SpaceFont" sx={{ mb: 1 }}>
         Projects
       </Typography>

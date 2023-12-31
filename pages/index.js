@@ -9,6 +9,7 @@ import Projects from "../Components/Projects";
 import Scroller from "../Components/Scroller";
 import Skills from "../Components/Skills";
 import Tools from "../Components/Tools";
+import PublishedPackages from "../Components/PublishedPackages";
 export default function Home() {
   return (
     <Layout>
@@ -20,6 +21,7 @@ export default function Home() {
         <Skills />
         <Tools />
         <Projects />
+        <PublishedPackages />
         <Contact />
         <Footer />
       </Box>
