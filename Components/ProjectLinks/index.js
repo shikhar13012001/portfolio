@@ -1,8 +1,7 @@
-import { Button, Stack } from "@mui/material";
+import { Button, Stack, useMediaQuery } from "@mui/material";
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { RiExternalLinkLine } from "react-icons/ri";
-import { useMediaQuery } from "@mui/material";
 export default function ProjectLinks(props) {
   const { websiteUrl, githubUrl } = props;
   const isMobile = useMediaQuery("(max-width:600px)");

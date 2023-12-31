@@ -4,8 +4,8 @@
   font-family: "Ginger";
   src: url("../fonts/Ginger.otf");
 }
-html {
-  scroll-behavior: smooth;
+html, body{
+  overscroll-behavior: none;
 }
 a {
   text-decoration: none;

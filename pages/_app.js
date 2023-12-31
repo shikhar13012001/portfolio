@@ -7,7 +7,7 @@ import {
   ThemeProvider,
   responsiveFontSizes,
 } from "@mui/material/styles";
-
+import { ScrollerMotion } from 'scroller-motion'
 function MyApp({ Component, pageProps }) {
   const theme = responsiveFontSizes(createTheme());
   React.useEffect(() => {
@@ -104,11 +104,13 @@ function MyApp({ Component, pageProps }) {
     });
   }, []);
   return (
+    <ScrollerMotion>
     <ThemeProvider theme={theme}>
       <Box sx={{ width: "100%", minHeight: "100vh" }} id="scroll-container">
         <Component {...pageProps} />
       </Box>
     </ThemeProvider>
+    </ScrollerMotion>
   );
 }
 

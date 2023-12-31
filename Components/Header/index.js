@@ -1,11 +1,10 @@
+import { Grid, Typography, useMediaQuery } from "@mui/material";
+import Link from "next/link";
 import React from "react";
-import { Grid, Typography } from "@mui/material";
-import HeaderStyles from "../../styles/Header.module.css";
 import { BsGithub } from "react-icons/bs";
 import { FontSizes } from "../../fonts";
-import { useMediaQuery } from "@mui/material";
+import HeaderStyles from "../../styles/Header.module.css";
 import Drawer from "../Drawer";
-import Link from "next/link";
 const Header = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   return !isMobile ? (
@@ -19,7 +18,7 @@ const Header = () => {
         className={HeaderStyles.sideBorder}
       >
         <BsGithub size={40} />{" "}
-        <Link href="github.com/shikhar13012001">
+        <Link href="https://github.com/shikhar13012001">
           <Typography className="margin-left-short" fontSize={FontSizes.para}>
             <span className="important-word SpaceFont">@shikhar13012001</span>
           </Typography>
