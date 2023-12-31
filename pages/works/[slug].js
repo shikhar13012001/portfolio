@@ -249,18 +249,19 @@ const Project = ({ slug }) => {
 
 export default Project;
 
-export async function getServerSideProps(context) {
-  const { params } = context;
-  const { slug } = params;
-  const ProjectDetails = ProjectDetailObject[slug];
-  if (!ProjectDetails) {
-    return {
-      notFound: true,
-    };
-  }
-  return {
-    props: {
-      slug:slug,
-    },
-  };
-}
+export async function getStaticPaths() {
+    const paths = [
+        { params: { slug: "gissues" } },
+        { params: { slug: "blackbird" } },
+        { params: { slug: "futurepedia" } },
+        { params: { slug: "louvre" } },
+        { params: { slug: "prospero" } },
+    ];
+    return { paths, fallback: false };
+    }
+
+    export async function getStaticProps({ params }) {
+    const { slug } = params;
+    if(!ProjectDetailObject[slug]) return { notFound: true };
+    return { props: { slug } };
+    }

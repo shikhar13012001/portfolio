@@ -29,11 +29,10 @@ export const getServerSideProps = async ({ res }) => {
     .filter((staticPage) => !forbiddenPages.includes(staticPage));
   const WorkPaths = [
     "futurepedia",
-    "black-bird-blog",
+    "blackbird",
     "gissues",
-    "louvre-meaux",
+    "louvre",
     "prospero",
-    "stimuler",
   ];
   const dynamicPages = WorkPaths.map((work) => `/works/${work}`);
   const pages = [...staticPages, ...dynamicPages,'/'];
