@@ -91,7 +91,7 @@ const Project = ({ slug }) => {
           <Box
             className={WorkStyles.backgroundProject}
             sx={{ backgroundImage: `url("${background.blurDataURL}")`,
-          backdropFilter: "blur(100px)!important"
+          backdropFilter: "blur(10px)!important"
         }}
           >
             <Typography variant="h1">{title}</Typography>

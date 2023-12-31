@@ -70,7 +70,7 @@ const skills = [
     name: "Vercel",
     description:
       "Vercel is a cloud platform for static sites and Serverless Functions that fits perfectly with your workflow.",
-  },
+  }
 ];
 const Tools = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
