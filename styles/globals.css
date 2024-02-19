@@ -114,3 +114,15 @@ a {
   z-index: 2;
 
 }
+
+/* 404 design */
+.bg { 
+  font-weight: 800;
+  text-transform: uppercase;
+  background: url('https://themes10.win/wp-content/uploads/2022/07/macos-Monterey-Sock-Blue-Light-4K-Desktop-Wallpaper-1024x576.jpg') 0 0 / cover no-repeat;
+  color: #de466c;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+/* 404 design end */
