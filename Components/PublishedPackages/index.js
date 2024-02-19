@@ -1,13 +1,12 @@
 import {
-  Grid,
   Box,
   Container,
+  Divider,
+  Grid,
   Typography,
   useMediaQuery,
-  Divider,
 } from "@mui/material";
-import Image from "next/image";
-
+import { DiNpm } from "react-icons/di";
 const PackageDetails = [
   {
     id: "cv-letter",
@@ -78,10 +77,11 @@ const PackageDetailsComponent = ({ packageDetail }) => {
           className="GrayColor"
           sx={{ borderColor: "rgb(106 104 104 / 49%)" }}
         />
-        <Typography className="SpaceFont" sx={{ fontWeight: 700 }}>
-          <a href={href} className="SpaceFont GrayColor">
-            {href.split("https://www.npmjs.com/package/")[1]}
+        <Typography className="SpaceFont" sx={{ fontWeight: 400 }}>
+          <a href={href} className="SpaceFont">
+            {href.split("https://www.npmjs.com/package/")[1]}{' '}
           </a>
+            <DiNpm style={{color:'red', fill:'red'}} size={40}/>
         </Typography>
       </Box>
     </Grid>
