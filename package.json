@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "description": "Design and Development",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
