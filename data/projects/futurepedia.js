@@ -9,15 +9,15 @@ import Mood from "../../public/works/futurepedia/moodboard/moodboard.png";
 
 export const ProjectDetails = {
   title: "Futurepedia",
-  seoDescription: `Futurepedia is the go-to place for AI tools and news. Join 150,000+ AI enthusiasts getting new tools in their inbox every week.`,
-  description: `Futurepedia is the go-to place for AI tools and news. Join 200,000+ AI enthusiasts getting new tools in their inbox every week.`,
-  startDate: "May 2023",
-  endDate: "May 2023",
+  seoDescription: `Futurepedia is the go-to place for AI tools and news, scaled to 200,000+ users on Next.js and Sanity CMS.`,
+  description: `Futurepedia is the go-to place for AI tools and news, serving 200,000+ AI enthusiasts. I worked full-stack across the platform, from vector search to performance and infrastructure cost.`,
+  startDate: "October 2022",
+  endDate: "June 2024",
   background: background,
-  role: "Full Stack Developer and Designer.",
+  role: "Software Engineering Intern — Full Stack",
   techStack:
-    "Nextjs, Google Fonts, Material UI, Sanity CMS, Vercel, Figma, Sentence Transformers, Typesense, Google Analytics, Firebase, Google Cloud, Cloud Functions.",
-  graphicDirection: `I spearheaded the design of the website and oversaw the development. This was my first large scale project and I learned about optimization and performance, as well as how to work with a team of developers. I also learned how to work with a designer and how to implement their designs into the website.`,
+    "Next.js, Sanity CMS, Vercel, Typesense, Upstash Redis, Firebase, Google Cloud, Google Analytics",
+  architecture: `Scaled a Next.js + Sanity CMS platform to 200,000+ users on Vercel. Led integration of Typesense vector search to replace basic keyword search, improving search precision by roughly 60%. Added serverless caching with Upstash Redis and shipped custom lazy-loaded YouTube embeds, which cut operational costs by about 19%, lifted the Lighthouse performance score by roughly 20 points, and improved conversions by about 15%.`,
   Mood: Mood,
   screenshots: [
     ProjectImage1,
@@ -27,7 +27,7 @@ export const ProjectDetails = {
     ProjectImage6,
     ProjectImage7,
   ],
-  typography: "DM Sans",
-  colors: ["#ffffff", "#0369a1", "#2b2b2b"],
-  href: "https://futurepedia.io/",
+  impact: "200K+ users · 60% better search precision · 19% lower infra cost",
+  stack: ["Next.js", "Sanity CMS", "Typesense", "Upstash Redis", "Vercel"],
+  liveUrl: "https://futurepedia.io/",
 };

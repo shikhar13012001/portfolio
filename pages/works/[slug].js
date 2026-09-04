@@ -1,95 +1,152 @@
 import {
   Box,
+  Chip,
   Container,
   Divider,
   Grid,
+  Stack,
   Typography,
   useMediaQuery,
 } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaGithub } from "react-icons/fa";
 import { RiExternalLinkLine } from "react-icons/ri";
-import ColorPaletteButtons from "../../Components/ColorPaletteButtons";
 import Layout from "../../Components/Layout";
+import ProjectLinks from "../../Components/ProjectLinks";
+import { SITE } from "../../lib/site-config";
 import { FontSizes } from "../../fonts";
-import ProjectImage1 from "../../public/works/gissues/SS1.png";
-import ProjectImage2 from "../../public/works/gissues/SS2.png";
-import ProjectImage3 from "../../public/works/gissues/SS3.png";
-import ProjectImage4 from "../../public/works/gissues/SS4.png";
-import ProjectImage6 from "../../public/works/gissues/SS6.png";
-import Git from "../../public/works/gissues/background.jpg";
-import GissuesMood from "../../public/works/gissues/moodboard/mood.png";
 import WorkStyles from "../../styles/Works.module.css";
 
-import { ProjectDetails as BlackBirdBlog } from "../../data/projects/black-bird-blog";
+import { ProjectDetails as Schedurx } from "../../data/projects/schedurx";
+import { ProjectDetails as PostMortemEng } from "../../data/projects/postmortemeng";
+import { ProjectDetails as Rampify } from "../../data/projects/rampify";
 import { ProjectDetails as Futurepedia } from "../../data/projects/futurepedia";
-import { ProjectDetails as Louvre } from "../../data/projects/louvre-meaux";
-import { ProjectDetails as Prospero } from "../../data/projects/prospero";
 
-const Gissues = {
-  title: "Gissues",
-  background: Git,
-  seoDescription: `Gissues is small side educational project build upon GitHub API
-    ( GraphQl ) to demonstrate the usage of graphql and Apollo
-    client in Next js.`,
-  description: `Gissues is small side educational project build upon GitHub API
-    ( GraphQl ) to demonstrate the usage of graphql and Apollo
-    client in Next js. This project is to help new developer to step
-    in Open source.`,
-  startDate: "May 2022",
-  endDate: "May 2022",
-  role: "Developer , designer and its Open Source Maintainer",
-  techStack:
-    "Nextjs, Google Fonts, Material UI, GitHub API, Apollo Client, Firebase, Google OAuth",
-  graphicDirection: `I spearheaded the design of the website and oversaw the development. This was my first React based Project so I kept with Modern, Functional and Swift Design.`,
-  Mood: GissuesMood,
-  screenshots: [
-    ProjectImage1,
-    ProjectImage2,
-    ProjectImage3,
-    ProjectImage4,
-    ProjectImage6,
-  ],
-  typography: "Space Grotesk",
-  colors: ["#ffffff", "#C4FDE5", "#2b2b2b"],
-  href: "https://gissues.vercel.app/",
+// Images are statically imported inside each project data file. Next.js
+// strips any top-level import that is only referenced inside
+// getStaticProps out of the client bundle, so this map must also be read
+// directly in the component body below — otherwise webpack only processes
+// these images in the server compilation and never emits them to the
+// client-servable _next/static/media output, and every image 404s.
+const projectDetails = {
+  schedurx: Schedurx,
+  postmortemeng: PostMortemEng,
+  rampify: Rampify,
+  futurepedia: Futurepedia,
 };
 
-const ProjectDetailObject = {
-  gissues: Gissues,
-  blackbird: BlackBirdBlog,
-  futurepedia: Futurepedia,
-  louvre: Louvre,
-  //   prospero: Prospero,
+const sectionDividerSx = {
+  width: "100%",
+  height: 3,
+  mb: 3,
+  backgroundColor: "#1e2435!important",
+  display: "flex",
+};
+
+const ProjectVisitLink = ({ liveUrl, githubUrl }) => {
+  if (liveUrl && githubUrl) {
+    return <ProjectLinks websiteUrl={liveUrl} githubUrl={githubUrl} />;
+  }
+  if (liveUrl) {
+    return (
+      <Link href={liveUrl} target="_blank">
+        <Typography
+          variant="subtitle1"
+          fontSize={FontSizes.para}
+          className="SpaceFont"
+        >
+          Visit Site <RiExternalLinkLine />
+        </Typography>
+      </Link>
+    );
+  }
+  if (githubUrl) {
+    return (
+      <Link href={githubUrl} target="_blank">
+        <Typography
+          variant="subtitle1"
+          fontSize={FontSizes.para}
+          className="SpaceFont"
+        >
+          View on GitHub <FaGithub />
+        </Typography>
+      </Link>
+    );
+  }
+  return (
+    <Typography
+      variant="subtitle1"
+      fontSize={FontSizes.para}
+      className="SpaceFont GrayColor"
+    >
+      Private project — details on request
+    </Typography>
+  );
 };
 
 const Project = ({ slug }) => {
+  const project = projectDetails[slug];
   const {
     title,
-    typography,
-    Mood,
     description,
-    colors,
+    seoDescription,
     role,
     techStack,
-    graphicDirection,
+    architecture,
+    impact,
+    stack,
+    Mood,
     screenshots,
-    href,
+    videos,
+    liveUrl,
+    githubUrl,
     background,
-  } = ProjectDetailObject[slug];
+    startDate,
+    endDate,
+  } = project;
   const isMobile = useMediaQuery("(max-width:600px)");
-  console.log(Mood, background);
+  const metaDescription = seoDescription || description;
+
+  const creativeWorkJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: title,
+    description: metaDescription,
+    url: `${SITE.url}/works/${slug}`,
+    image: `${SITE.url}${background.src}`,
+    author: {
+      "@type": "Person",
+      name: SITE.name,
+      url: SITE.url,
+    },
+  };
 
   return (
-    <Layout title={`WORKS | ${title.toUpperCase()}`} description={description}>
+    <Layout
+      title={title}
+      description={metaDescription}
+      path={`/works/${slug}`}
+      jsonLd={creativeWorkJsonLd}
+    >
       <Container className={WorkStyles.FullSize} id="GScroll">
         <Box sx={{ mb: 3 }}>
           <Box
             className={WorkStyles.backgroundProject}
-            sx={{ backgroundImage: `url("${background.src}")` }}
+            sx={{ position: "relative" }}
           >
-            <Typography variant="h1">{title}</Typography>
+            <Image
+              src={background}
+              alt={`${title} cover`}
+              layout="fill"
+              objectFit="cover"
+              priority
+              placeholder="blur"
+            />
+            <Typography variant="h1" sx={{ position: "relative", zIndex: 1 }}>
+              {title}
+            </Typography>
           </Box>
         </Box>
         <Container disableGutters={true} className={WorkStyles.description}>
@@ -105,15 +162,7 @@ const Project = ({ slug }) => {
               >
                 {description}
               </Typography>
-              <Link href={href} target="_blank">
-                <Typography
-                  variant="subtitle1"
-                  fontSize={FontSizes.para}
-                  className="SpaceFont"
-                >
-                  Visit Site <RiExternalLinkLine />
-                </Typography>
-              </Link>
+              <ProjectVisitLink liveUrl={liveUrl} githubUrl={githubUrl} />
             </Grid>
             <Grid
               item
@@ -132,7 +181,7 @@ const Project = ({ slug }) => {
                 fontSize={FontSizes.para}
                 className={`SpaceFont GrayColor`}
               >
-                May 2022
+                {startDate} — {endDate}
               </Typography>
               <Typography variant="h4" sx={{ mt: 4 }}>
                 Role
@@ -163,14 +212,14 @@ const Project = ({ slug }) => {
           <Grid container columns={12}>
             <Grid item xs={12} sm={12} md={8} lg={8}>
               <Typography variant="h3" sx={{ mb: 6 }}>
-                Graphic Direction
+                Architecture &amp; Approach
               </Typography>
               <Typography
                 variant="subtitle1"
                 fontSize={FontSizes.ProjectDescription}
                 className={`GrayColor SpaceFont  ${WorkStyles.ProjectDescrption}`}
               >
-                {graphicDirection}
+                {architecture}
               </Typography>
             </Grid>
 
@@ -180,9 +229,11 @@ const Project = ({ slug }) => {
                 className="SpaceFont"
                 sx={{ opacity: 0.7, mt: 3, mb: 3 }}
               >
-                Typography
+                Key Result
               </Typography>
-              <Typography variant="h2">{typography}</Typography>
+              <Typography variant="h4" className="SpaceFont">
+                {impact}
+              </Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={6}>
               <Typography
@@ -190,17 +241,38 @@ const Project = ({ slug }) => {
                 className="SpaceFont"
                 sx={{ mt: 3, mb: 3 }}
               >
-                colors
+                Tech Stack
               </Typography>
 
-              <ColorPaletteButtons colors={colors} />
+              <Stack direction="row" flexWrap="wrap" gap={1.5}>
+                {stack.map((tech) => (
+                  <Chip
+                    key={tech}
+                    label={tech}
+                    className="SpaceFont"
+                    sx={{
+                      bgcolor: "#14192A",
+                      color: "white",
+                      border: "1px solid #1e2435",
+                    }}
+                  />
+                ))}
+              </Stack>
             </Grid>
           </Grid>
         </Container>
         <Box
           className={`${WorkStyles.MoodBoard}`}
-          sx={{ backgroundImage: `url(${Mood.src})` }}
-        ></Box>
+          sx={{ position: "relative" }}
+        >
+          <Image
+            src={Mood}
+            alt={`${title} moodboard`}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+          />
+        </Box>
         <Box className={WorkStyles.FullSize} sx={{ mt: 20 }}>
           <Container disableGutters={true}>
             <Typography
@@ -219,22 +291,45 @@ const Project = ({ slug }) => {
             >
               Screenshots
             </Typography>
-            <Divider
-              sx={{
-                width: "100%",
-                height: 3,
-                mb: 3,
-                backgroundColor: "#1e2435!important",
-                display: "flex",
-              }}
-            />
-            {screenshots.map((shot, index) => (
-              <Image
-                key={index}
-                src={shot}
-                alt={`${title} screenshot-${index}`}
-              />
-            ))}
+            <Divider sx={sectionDividerSx} />
+            <Box className={WorkStyles.MasonryGrid}>
+              {screenshots.map((shot, index) => (
+                <Box key={index} className={WorkStyles.MasonryItem}>
+                  <Image
+                    src={shot}
+                    alt={`${title} screenshot-${index}`}
+                    layout="responsive"
+                  />
+                </Box>
+              ))}
+            </Box>
+
+            {videos && videos.length > 0 && (
+              <>
+                <Typography
+                  variant="h4"
+                  fontSize={FontSizes.para}
+                  className="SpaceFont"
+                  sx={{ mt: 12, mb: 7, textAlign: "center" }}
+                >
+                  Videos
+                </Typography>
+                <Divider sx={sectionDividerSx} />
+                <Box className={WorkStyles.MasonryGrid}>
+                  {videos.map((videoSrc, index) => (
+                    <Box key={index} className={WorkStyles.MasonryItem}>
+                      <video
+                        src={videoSrc}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        style={{ width: "100%", display: "block" }}
+                      />
+                    </Box>
+                  ))}
+                </Box>
+              </>
+            )}
           </Container>
         </Box>
       </Container>
@@ -245,18 +340,17 @@ const Project = ({ slug }) => {
 export default Project;
 
 export async function getStaticPaths() {
-  const paths = [
-    { params: { slug: "gissues" } },
-    { params: { slug: "blackbird" } },
-    { params: { slug: "futurepedia" } },
-    { params: { slug: "louvre" } },
-    { params: { slug: "prospero" } },
-  ];
-  return { paths, fallback: false };
+  return {
+    paths: SITE.works.map((slug) => ({ params: { slug } })),
+    fallback: false,
+  };
 }
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  if (!ProjectDetailObject[slug]) return { notFound: true };
-  return { props: { slug } };
+  if (!projectDetails[slug]) return { notFound: true };
+  return {
+    props: { slug },
+    revalidate: 3600,
+  };
 }

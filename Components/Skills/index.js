@@ -20,16 +20,16 @@ const Skills = () => {
       >
         <StyledTypography variant="h2">
           <BsFillCircleFill className={SkillsStyle.circle} size={30} />{" "}
-          FULLSTACK DEVELOPER{" "}
+          SOFTWARE ENGINEER{" "}
           <BsFillCircleFill className={SkillsStyle.circle} size={30} />
         </StyledTypography>
         <StyledTypography variant="h2">
-          <BsFillCircleFill className={SkillsStyle.circle} size={30} /> FRONTEND
+          <BsFillCircleFill className={SkillsStyle.circle} size={30} /> AI / ML
           ENGINEER <BsFillCircleFill className={SkillsStyle.circle} size={30} />
         </StyledTypography>
         <StyledTypography variant="h2">
-          <BsFillCircleFill className={SkillsStyle.circle} size={30} /> WEB
-          DESIGNER <BsFillCircleFill className={SkillsStyle.circle} size={30} />
+          <BsFillCircleFill className={SkillsStyle.circle} size={30} /> BACKEND
+          ENGINEER <BsFillCircleFill className={SkillsStyle.circle} size={30} />
         </StyledTypography>
         <StyledTypography variant="h2">
           <BsFillCircleFill className={SkillsStyle.circle} size={30} /> OPEN

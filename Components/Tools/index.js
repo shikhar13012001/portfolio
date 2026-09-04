@@ -11,66 +11,90 @@ import { fontSizes } from "../../fonts";
 import ToolsStyle from "../../styles/Tools.module.css";
 import Image from "next/image";
 import { useMediaQuery } from "@mui/material";
+
+import JavaIcon from "../../public/tools/java.svg";
+import SpringBootIcon from "../../public/tools/springboot.svg";
+import PythonIcon from "../../public/tools/python.svg";
+import NextJsIcon from "../../public/tools/nextdotjs.svg";
+import TypeScriptIcon from "../../public/tools/typescript.svg";
+import LangChainIcon from "../../public/tools/langchain.svg";
+import DockerIcon from "../../public/tools/docker.svg";
+import KubernetesIcon from "../../public/tools/kubernetes.svg";
+import PostgreSQLIcon from "../../public/tools/postgresql.svg";
+import TwilioIcon from "../../public/tools/twilio.svg";
+import GitHubActionsIcon from "../../public/tools/githubactions.svg";
+import VercelIcon from "../../public/tools/vercel.svg";
+
 const skills = [
   {
+    name: "Java",
+    icon: JavaIcon,
+    description:
+      "Primary language for production backend services and JVM tooling at American Express",
+  },
+  {
+    name: "Spring Boot",
+    icon: SpringBootIcon,
+    description:
+      "Framework for production backend services and internal developer tools",
+  },
+  {
+    name: "Python",
+    icon: PythonIcon,
+    description:
+      "Language of choice for ML pipelines, model-scoring APIs, and automation tooling",
+  },
+  {
     name: "Next js",
-    description: "UI library for interfaces and serverless workflows",
-  },
-  {
-    name: "GraphQL",
-    description:
-      "GraphQL is a query language for APIs and is used for data fetching and mutation",
-  },
-  {
-    name: "Firebase",
-    description:
-      "Firebase is a cloud database and cloud storage platform for web, mobile and server apps",
-  },
-  {
-    name: "AWS-Amplify",
-    description:
-      "AWS Amplify is a framework for building APIs and mobile apps with AWS",
-  },
-  {
-    name: "Figma",
-    description:
-      "Figma is a tool for designing and prototyping web and mobile apps",
-  },
-  {
-    name: "Nodejs",
-    description:
-      "Nodejs is a JavaScript runtime built on Chrome's V8 JavaScript engine",
-  },
-  {
-    name: "MongoDB",
-    description:
-      "MongoDB is a document-oriented database designed for storing data",
-  },
-  {
-    name: "Material UI",
-    description: "Material UI is a library for building user interfaces",
+    icon: NextJsIcon,
+    description: "React framework for full-stack product frontends",
   },
   {
     name: "TypeScript",
+    icon: TypeScriptIcon,
     description:
-      "TypeScript is a superset of JavaScript that compiles to plain JavaScript",
+      "Typed JavaScript I default to for frontends, CLIs and Node services",
   },
   {
-    name: "Sanity",
+    name: "LangChain",
+    icon: LangChainIcon,
     description:
-      "Sanity is a headless CMS that lets you manage content with a structured content model",
+      "Agentic pipelines and retrieval-augmented systems on GPT-4o, Claude and Azure OpenAI",
   },
   {
-    name: "Typesense",
+    name: "Docker",
+    icon: DockerIcon,
     description:
-      "Typesense is a fast, typo-tolerant search engine, easier than elastic search",
+      "Containerizing services for consistent local dev and deployment",
   },
-
+  {
+    name: "Kubernetes",
+    icon: KubernetesIcon,
+    description: "Orchestrating containerized workloads in production",
+  },
+  {
+    name: "PostgreSQL",
+    icon: PostgreSQLIcon,
+    description:
+      "Primary relational store for application and clinical data via Supabase and Prisma",
+  },
+  {
+    name: "Twilio",
+    icon: TwilioIcon,
+    description:
+      "SIP telephony and messaging infrastructure behind my voice AI and WhatsApp integrations",
+  },
+  {
+    name: "GitHub Actions",
+    icon: GitHubActionsIcon,
+    description: "CI/CD pipelines for build-validate-test-deploy workflows",
+  },
   {
     name: "Vercel",
+    icon: VercelIcon,
     description:
-      "Vercel is a cloud platform for static sites and Serverless Functions that fits perfectly with your workflow.",
-  }
+      "Deployment platform for Next.js apps and preview environments",
+  },
 ];
 const Tools = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -90,10 +114,10 @@ const Tools = () => {
             },
           }}
         >
-          There are many tools that can be used for design, animation and visual
-          development. But these are the tools I prefer to use to build the best
-          digital experiences. In my opinion tools are not permanent and I’ll be
-          always trying out new stuff :)
+          There are many tools out there for backend systems, AI pipelines and
+          developer tooling. These are the ones I reach for most. In my
+          opinion tools are not permanent and I&apos;ll always be trying out
+          new stuff :)
         </Typography>
       </Container>
       <Container
@@ -127,13 +151,26 @@ const Tools = () => {
                   alignItems: "center",
                 }}
               >
-                <Image
-                  placeholder={require(`../../public/gradients/purple.png`)}
-                  src={require(`../../public/gradients/${key + 1}.png`)}
-                  alt=""
-                  objectPosition={"center"}
-                  priority
-                />
+                <Box
+                  sx={{
+                    width: isMobile ? 190 : 150,
+                    height: isMobile ? 190 : 150,
+                    borderRadius: 3,
+                    bgcolor: "#f4f4f4",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    p: 2,
+                  }}
+                >
+                  <Image
+                    src={item.icon}
+                    alt={item.name}
+                    width={isMobile ? 130 : 100}
+                    height={isMobile ? 130 : 100}
+                    priority
+                  />
+                </Box>
               </Grid>
               <Grid item xs={3} sx={{ width: "100%", mr: 1 }}>
                 <Typography variant="h2" className="GrayColor">

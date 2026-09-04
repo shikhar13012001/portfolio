@@ -35,8 +35,9 @@ const About = () => {
             className="SpaceFont"
             fontSize={FontSizes.about}
           >
-            Im a Digital Designer & Visual Developer based in Lucknow, India.
-            Creating digital experiences with an eye for design and motion.
+            I&apos;m a Software Engineer at American Express, based in
+            Bengaluru, India. I build AI-driven products, agentic developer
+            tooling, and backend systems.
           </Typography>
           <br />
           <br />
@@ -45,10 +46,12 @@ const About = () => {
             className={`SpaceFont ${AboutStyles.description}`}
             fontSize={FontSizes.ProjectDescription}
           >
-            Being creative with digital and motion design for websites is what
-            I’ve been doing for the past few months of College. With just UI /
-            UX design I was not satisfied. Creating websites that are visually
-            attractive through design and motion is what I love to do.
+            At American Express I work on Automation &amp; Tools — shipping
+            an LLM-powered VS Code extension for autonomous test generation, a
+            terminal-native package manager for our internal Claude skills
+            ecosystem, and an ML-based record-linkage system for payment
+            adjudication. Before that, I built a RAG platform at Nasdaq and
+            scaled a 200k-user product at Futurepedia.
           </Typography>
           <br />
           <br />
@@ -56,9 +59,10 @@ const About = () => {
             variant="h6"
             className={`SpaceFont ${AboutStyles.description}`}
           >
-            By embracing code and proper tools. I&apos;m not just the designer
-            anymore. Now I can develop my own digital creations into an online
-            experience, while having full control of design, motion and build.
+            Outside of work, I build my own AI agents and voice systems end
+            to end — from a multilingual clinic voice receptionist to a
+            multi-agent video-generation pipeline — because I like owning a
+            product from architecture through to the last mile of the UI.
           </Typography>
           <Typography
             variant="h2"
@@ -95,12 +99,12 @@ const About = () => {
           <Marquee gradient={false} className={AboutStyles.Marquee}>
             <Typography variant="h4" className={AboutStyles.title}>
               <BsFillCircleFill size={10} className={AboutStyles.Circle} />{" "}
-              FRONTEND DEVELOPER{" "}
+              SOFTWARE ENGINEER{" "}
               <BsFillCircleFill className={AboutStyles.Circle} size={10} />
             </Typography>
             <Typography variant="h4" className={AboutStyles.title}>
-              <BsFillCircleFill className={AboutStyles.Circle} size={10} /> WEB
-              DESIGNER{" "}
+              <BsFillCircleFill className={AboutStyles.Circle} size={10} /> AI
+              / ML ENGINEER{" "}
               <BsFillCircleFill className={AboutStyles.Circle} size={10} />
             </Typography>
           </Marquee>

@@ -38,3 +38,38 @@
     height: 40vh!important;
   }
 }
+
+.MasonryGrid {
+  column-count: 3;
+  column-gap: 20px;
+  width: 100%;
+}
+
+.MasonryItem {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #0c0f1a;
+}
+
+.MasonryItem video {
+  vertical-align: top;
+}
+
+@media (max-width: 900px) {
+  .MasonryGrid {
+    column-count: 2;
+    column-gap: 14px;
+  }
+  .MasonryItem {
+    margin-bottom: 14px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .MasonryGrid {
+    column-count: 1;
+  }
+}

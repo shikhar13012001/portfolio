@@ -2,28 +2,21 @@
 const nextConfig = {
   reactStrictMode: true,
   redirects: async () => {
-    return [
-      {
-        source: "/works",
-        destination: "/works/gissues",
-        permanent: true,
-      }, 
-      {
-        destination: "/works/blackbird",
-        source: "/works/black-bird-blog",
-        permanent: true,
-      },
-      {
-        destination: "/works/louvre",
-        source: "/works/louvre-meaux",
-        permanent: true,
-      },
-      {
-        destination: "/works/prospero",
-        source: "/works/prospero",
-        permanent: true,
-      }, 
+    // Old project URLs no longer exist — send everything to the homepage.
+    const legacy = [
+      "/works",
+      "/works/gissues",
+      "/works/blackbird",
+      "/works/black-bird-blog",
+      "/works/louvre",
+      "/works/louvre-meaux",
+      "/works/prospero",
     ];
+    return legacy.map((source) => ({
+      source,
+      destination: "/",
+      permanent: true,
+    }));
   }
 };
 

@@ -4,114 +4,120 @@ import {
   createTheme,
   responsiveFontSizes,
 } from "@mui/material/styles";
-import easyScroll from "easy-scroll";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import React from "react";
-import { ScrollerMotion } from "scroller-motion";
-import "../styles/globals.css"; 
+import "../styles/globals.css";
+
+const theme = responsiveFontSizes(createTheme());
+
 function MyApp({ Component, pageProps }) {
-  const theme = responsiveFontSizes(createTheme());
   React.useEffect(() => {
+    // Skip the custom cursor entirely on touch devices.
+    if (window.matchMedia("(hover: none)").matches) return;
+
     const pointer = document.createElement("div");
     pointer.id = "pointer-dot";
+    pointer.style.borderColor = "white";
     const ring = document.createElement("div");
     ring.id = "pointer-ring";
     document.body.insertBefore(pointer, document.body.children[0]);
     document.body.insertBefore(ring, document.body.children[0]);
 
+    const pointerColor = "#7176eb";
+    const ringSize = 15;
+    const ringClickSize = 20;
+
     let mouseX = -100;
     let mouseY = -100;
     let ringX = -100;
     let ringY = -100;
-    let isHover = false;
     let mouseDown = false;
-    const init_pointer = (options) => {
-      window.onmousemove = (mouse) => {
-        mouseX = mouse.clientX;
-        mouseY = mouse.clientY;
-      };
+    let rafId = null;
 
-      window.onmousedown = (mouse) => {
-        mouseDown = true;
-      };
+    const trace = (a, b, n) => (1 - n) * a + n * b;
 
-      window.onmouseup = (mouse) => {
-        mouseDown = false;
-      };
+    const render = () => {
+      rafId = null;
+      ringX = trace(ringX, mouseX, 0.2);
+      ringY = trace(ringY, mouseY, 0.2);
 
-      const trace = (a, b, n) => {
-        return (1 - n) * a + n * b;
-      };
-      window["trace"] = trace;
+      ring.style.borderColor = pointerColor;
+      ring.style.padding = (mouseDown ? ringClickSize : ringSize) + "px";
 
-      const getOption = (option) => {
-        let defaultObj = {
-          pointerColor: "#750c7e",
-          ringSize: 20,
-          ringClickSize: (options["ringSize"] || 15) - 5,
-          ringHoverSize: (options["ringSize"] || 15) + 5,
-        };
-        if (options[option] == undefined) {
-          return defaultObj[option];
-        } else {
-          return options[option];
-        }
-      };
+      pointer.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      ring.style.transform = `translate(${
+        ringX - (mouseDown ? ringClickSize : ringSize)
+      }px, ${
+        ringY - (mouseDown ? ringClickSize : ringSize)
+      }px)`;
 
-      const render = () => {
-        ringX = trace(ringX, mouseX, 0.2);
-        ringY = trace(ringY, mouseY, 0.2);
-
-        if (document.querySelector(".p-action-click:hover")) {
-          pointer.style.borderColor = getOption("pointerColor");
-          isHover = true;
-        } else {
-          pointer.style.borderColor = "white";
-          isHover = false;
-        }
-        ring.style.borderColor = getOption("pointerColor");
-        if (mouseDown) {
-          ring.style.padding = getOption("ringClickSize") + "px";
-        } else {
-          ring.style.padding = getOption("ringSize") + "px";
-        }
-
-        pointer.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-        ring.style.transform = `translate(${
-          ringX -
-          (mouseDown ? getOption("ringClickSize") : getOption("ringSize"))
-        }px, ${
-          ringY -
-          (mouseDown ? getOption("ringClickSize") : getOption("ringSize"))
-        }px)`;
-
-        requestAnimationFrame(render);
-      };
-      requestAnimationFrame(render);
+      // Idle pause: stop the loop once the ring has settled on the pointer.
+      if (!mouseDown && Math.abs(mouseX - ringX) < 0.5 && Math.abs(mouseY - ringY) < 0.5) {
+        return;
+      }
+      rafId = requestAnimationFrame(render);
     };
-    init_pointer({
-      pointerColor: "#7176eb",
-      ringSize: 15, // Pixels
-      ringClickSize: 20, // Pixels when clicking
-    });
+
+    const restart = () => {
+      if (rafId === null) rafId = requestAnimationFrame(render);
+    };
+
+    const onMouseMove = (mouse) => {
+      mouseX = mouse.clientX;
+      mouseY = mouse.clientY;
+      // The dot tracks the pointer instantly — keep it in sync even while paused.
+      pointer.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      restart();
+    };
+
+    const onMouseDown = () => {
+      mouseDown = true;
+      restart();
+    };
+
+    const onMouseUp = () => {
+      mouseDown = false;
+      restart();
+    };
+
+    const onPointerOver = (e) => {
+      if (e.target instanceof Element && e.target.closest(".p-action-click")) {
+        pointer.style.borderColor = pointerColor;
+      }
+    };
+
+    const onPointerOut = (e) => {
+      if (e.target instanceof Element && e.target.closest(".p-action-click")) {
+        pointer.style.borderColor = "white";
+      }
+    };
+
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mousedown", onMouseDown);
+    window.addEventListener("mouseup", onMouseUp);
+    window.addEventListener("pointerover", onPointerOver);
+    window.addEventListener("pointerout", onPointerOut);
+    restart();
+
+    return () => {
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mousedown", onMouseDown);
+      window.removeEventListener("mouseup", onMouseUp);
+      window.removeEventListener("pointerover", onPointerOver);
+      window.removeEventListener("pointerout", onPointerOut);
+      pointer.remove();
+      ring.remove();
+    };
   }, []);
 
-  React.useEffect(() => {
-    easyScroll({
-      scrollableDomEle: window,
-      direction: "bottom",
-      duration: 1000,
-      easingPreset: "easeInOutQuad",
-      scrollAmount: 0,
-    });
-  }, []);
   return (
-    <ThemeProvider theme={theme}> 
-      <ScrollerMotion>
-        <Box sx={{ width: "100%", minHeight: "100vh" }} id="scroll-container">
-          <Component {...pageProps} />
-        </Box>
-      </ScrollerMotion>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ width: "100%", minHeight: "100vh" }}>
+        <Component {...pageProps} />
+      </Box>
       <Box className="vigentte"></Box>
+      <SpeedInsights />
     </ThemeProvider>
   );
 }

@@ -23,16 +23,10 @@ const Footer = () => {
       <Typography
         variant="body1"
         component="a"
-        href="https://twitter.com/Nodlehs73"
+        href="https://x.com/Nodlehs73"
         className={`${FooterStyles.footerText} SpaceFont`}
       >
-        TWITTER
-      </Typography>
-      <Typography
-        variant="body1"
-        className={`${FooterStyles.footerText} SpaceFont`}
-      >
-        DISCORD
+        X / TWITTER
       </Typography>
     </Box>
   );

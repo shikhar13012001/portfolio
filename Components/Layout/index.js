@@ -1,12 +1,21 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { NextSeo } from "next-seo";
-const Layout = ({ children, title, description }) => {
+import { SITE, ogImageAbsoluteUrl } from "../../lib/site-config";
+
+const Layout = ({ children, title, description, path = "/", jsonLd }) => {
   const variants = {
     hidden: { opacity: 0, x: -200, y: 0 },
     enter: { opacity: 1, x: 0, y: 0 },
     exit: { opacity: 0, x: 0, y: -100 },
   };
+  const metaDescription = description || SITE.description;
+  const canonical = `${SITE.url}${path}`;
+  // next-seo's NextSeo (not DefaultSeo) ignores `defaultTitle`, and its
+  // titleTemplate uses module-level state — so build the final title here.
+  const pageTitle = title
+    ? SITE.titleTemplate.replace("%s", title)
+    : SITE.defaultTitle;
   return (
     <motion.div
       initial="hidden"
@@ -17,35 +26,37 @@ const Layout = ({ children, title, description }) => {
       className="layout"
     >
       <NextSeo
-        title={title || "Shikhar Gupta"}
-        titleTemplate={title || "Shikhar Gupta"}
-        defaultTitle="Shikhar Gupta"
-        description={
-          description ||
-          "A full stack web developer, who loves to design and develop beautiful websites. I have been coding for over a year now."
-        }
-        canonical="https://portfolio-shikhar13012001.vercel.app/"
+        title={pageTitle}
+        description={metaDescription}
+        canonical={canonical}
         openGraph={{
-          url: "https://portfolio-shikhar13012001.vercel.app/",
-          title: "Shikhar Gupta",
-          description:
-            description ||
-            "A full stack web developer, who loves to design and develop beautiful websites. I have been coding for over a year now.",
+          url: canonical,
+          title: title ? `${title} | ${SITE.name}` : SITE.defaultTitle,
+          description: metaDescription,
+          type: "website",
+          site_name: SITE.name,
+          locale: SITE.locale,
           images: [
             {
-              url: "https://i.ibb.co/HTdrqKD/Screenshot-225.png",
-              width: 800,
-              height: 420,
-              alt: "Shikhar Gupta",
+              url: ogImageAbsoluteUrl,
+              width: SITE.ogImageWidth,
+              height: SITE.ogImageHeight,
+              alt: SITE.name,
             },
           ],
         }}
         twitter={{
-          handle: "@Nodlehs73",
-          site: "@Nodlehs73",
+          handle: SITE.twitterHandle,
+          site: SITE.twitterHandle,
           cardType: "summary_large_image",
         }}
       />
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
       {children}
     </motion.div>
   );

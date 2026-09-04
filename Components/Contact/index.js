@@ -56,8 +56,9 @@ const Contact = () => {
           }}
           fontSize={FontSizes.ProjectDescription}
         >
-          I am available for a limited number of freelance projects this year.
-          Looking for a DIGITAL DESIGNER VISUAL DEVELOPER? Just get in touch.
+          I&apos;m always open to interesting conversations and opportunities.
+          Looking for a SOFTWARE ENGINEER with AI and backend experience?
+          Just get in touch.
         </Typography>
       </Grid>
       <Grid

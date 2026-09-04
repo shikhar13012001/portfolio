@@ -1,8 +1,15 @@
-/* font set */
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+/* font set — self-hosted */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SpaceGrotesk-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 @font-face {
   font-family: "Ginger";
-  src: url("../fonts/Ginger.otf");
+  src: url("/fonts/Ginger.otf");
+  font-display: swap;
 }
 html, body{
   overscroll-behavior: none;
