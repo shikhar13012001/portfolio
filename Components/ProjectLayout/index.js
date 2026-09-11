@@ -53,22 +53,22 @@ export default function ProjectItemLayout(props) {
         className="text_hover"
         {...hoverHandlers}
       >
-        <Link href={href}>
-          <Typography
-            variant="h1"
-            component="h3"
-            fontSize={fontSizes}
-            sx={{
-              fontStyle: "italic",
-              "&:hover": {
-                ml: 2,
-              },
-              transition: `all 0.1s ease-in`,
-            }}
-          >
-            {name}
-          </Typography>
-        </Link>
+        <Typography
+          variant="h1"
+          component="h3"
+          fontSize={fontSizes}
+          sx={{
+            fontStyle: "italic",
+            "&:hover": {
+              ml: 2,
+            },
+            transition: `all 0.1s ease-in`,
+          }}
+        >
+          <Link href={href}>
+            <a>{name}</a>
+          </Link>
+        </Typography>
 
         {/* Raw <img> because next/image in Next 12.1.6 does not forward refs,
             which the gsap hover animation needs. */}

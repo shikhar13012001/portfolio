@@ -17,19 +17,26 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: SITE.name,
-  url: SITE.url,
+  url: `${SITE.url}/`,
   image: `${SITE.url}${SITE.ogImage}`,
   jobTitle: "Software Engineer",
   worksFor: {
     "@type": "Organization",
     name: "American Express",
   },
-  sameAs: [SITE.socials.github, SITE.socials.linkedin],
+  sameAs: [SITE.socials.github, SITE.socials.linkedin, SITE.socials.twitter],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.name,
+  url: `${SITE.url}/`,
 };
 
 export default function Home() {
   return (
-    <Layout path="/" jsonLd={personJsonLd}>
+    <Layout path="/" jsonLd={[personJsonLd, websiteJsonLd]}>
       <Box sx={{ width: "100%", minHeight: "100vh" }}>
         <Header />
         <Hero />

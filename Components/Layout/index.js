@@ -3,7 +3,16 @@ import React from "react";
 import { NextSeo } from "next-seo";
 import { SITE, ogImageAbsoluteUrl } from "../../lib/site-config";
 
-const Layout = ({ children, title, description, path = "/", jsonLd }) => {
+const Layout = ({
+  children,
+  title,
+  description,
+  path = "/",
+  image,
+  imageWidth,
+  imageHeight,
+  jsonLd,
+}) => {
   const variants = {
     hidden: { opacity: 0, x: -200, y: 0 },
     enter: { opacity: 1, x: 0, y: 0 },
@@ -16,6 +25,11 @@ const Layout = ({ children, title, description, path = "/", jsonLd }) => {
   const pageTitle = title
     ? SITE.titleTemplate.replace("%s", title)
     : SITE.defaultTitle;
+  const ogImage = image || ogImageAbsoluteUrl;
+  // Google/LinkedIn/X read every JSON-LD script on the page as one entity
+  // graph, so a distinct block per type (Person, WebSite, CreativeWork,
+  // BreadcrumbList, ...) is the standard multi-entity pattern.
+  const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
   return (
     <motion.div
       initial="hidden"
@@ -38,10 +52,10 @@ const Layout = ({ children, title, description, path = "/", jsonLd }) => {
           locale: SITE.locale,
           images: [
             {
-              url: ogImageAbsoluteUrl,
-              width: SITE.ogImageWidth,
-              height: SITE.ogImageHeight,
-              alt: SITE.name,
+              url: ogImage,
+              width: imageWidth || SITE.ogImageWidth,
+              height: imageHeight || SITE.ogImageHeight,
+              alt: title || SITE.name,
             },
           ],
         }}
@@ -51,12 +65,13 @@ const Layout = ({ children, title, description, path = "/", jsonLd }) => {
           cardType: "summary_large_image",
         }}
       />
-      {jsonLd && (
+      {jsonLdBlocks.map((block, index) => (
         <script
+          key={index}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(block) }}
         />
-      )}
+      ))}
       {children}
     </motion.div>
   );

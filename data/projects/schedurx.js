@@ -9,7 +9,7 @@ import Mood from "../../public/works/schedurx/SS5.png";
 
 export const ProjectDetails = {
   title: "ScheduRx",
-  seoDescription: `ScheduRx is a clinic operating system for independent doctors in India — a staff dashboard, patient booking site and phone voice agent sharing one backend on Supabase Postgres.`,
+  seoDescription: `ScheduRx is a clinic operating system for independent doctors in India — a staff dashboard, booking site, and voice agent on one Supabase backend.`,
   description: `A clinic operating system for independent doctors in India, built as a set of independently deployable services: a staff-facing "Clinic Command Center" dashboard, a public patient booking site, and a phone-based voice agent — all backed by one Express API that owns the data.`,
   startDate: "2025",
   endDate: "Present",

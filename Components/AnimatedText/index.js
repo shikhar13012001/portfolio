@@ -60,39 +60,47 @@ const AnimatedCharacters = (props) => {
     <Typography
       variant={TypographyVariant}
       component={props.component}
+      href={props.href}
       className={styles.textAlign}
       fontSize={MobileResponsive}
     >
-      {words.map((word, index) => {
-        return (
-          // Wrap each word in the Wrapper component
-          <Wrapper key={index}>
-            {words[index].flat().map((element, index) => {
-              return (
-                <span
-                  style={{
-                    overflow: "hidden",
-                    display: "inline-block",
-                    color: `${props.color}!important`,
-                  }}
-                  key={index}
-                >
-                  <motion.span
+      {/* The per-character animation below fragments each word into
+          individual spans for the reveal effect. Text extractors (and some
+          assistive tech) read fragmented single-character nodes unreliably
+          or skip them, so the real word is exposed here as plain text and
+          hidden from the animation via aria-hidden. */}
+      <span className="visually-hidden">{props.text}</span>
+      <span aria-hidden="true">
+        {words.map((word, index) => {
+          return (
+            // Wrap each word in the Wrapper component
+            <Wrapper key={index}>
+              {words[index].flat().map((element, index) => {
+                return (
+                  <span
                     style={{
+                      overflow: "hidden",
                       display: "inline-block",
                       color: `${props.color}!important`,
                     }}
-                    variants={item}
+                    key={index}
                   >
-                    {element}
-                  </motion.span>
-                </span>
-              );
-            })}
-          </Wrapper>
-        );
-      })}
-      {/* {} */}
+                    <motion.span
+                      style={{
+                        display: "inline-block",
+                        color: `${props.color}!important`,
+                      }}
+                      variants={item}
+                    >
+                      {element}
+                    </motion.span>
+                  </span>
+                );
+              })}
+            </Wrapper>
+          );
+        })}
+      </span>
     </Typography>
   );
 };

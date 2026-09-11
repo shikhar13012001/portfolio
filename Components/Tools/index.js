@@ -168,7 +168,6 @@ const Tools = () => {
                     alt={item.name}
                     width={isMobile ? 130 : 100}
                     height={isMobile ? 130 : 100}
-                    priority
                   />
                 </Box>
               </Grid>

@@ -14,10 +14,10 @@ export default function SwipeableTemporaryDrawer() {
     right: false,
   });
   const placeholderText = [
-    { type: "heading1", text: "Home" },
-    { type: "heading1", text: "About" },
-    { type: "heading1", text: "Works" },
-    { type: "heading1", text: "Contact" },
+    { type: "heading1", text: "Home", href: "/" },
+    { type: "heading1", text: "About", href: "#about" },
+    { type: "heading1", text: "Works", href: "#projects" },
+    { type: "heading1", text: "Contact", href: "#contact" },
   ];
   const container = {
     visible: {
@@ -63,7 +63,7 @@ export default function SwipeableTemporaryDrawer() {
               {...item}
               key={index}
               variant="h1"
-              component="p"
+              component="a"
             />
           );
         })}
@@ -75,7 +75,10 @@ export default function SwipeableTemporaryDrawer() {
     <div>
       {["bottom"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>
+          <Button
+            onClick={toggleDrawer(anchor, true)}
+            aria-label="Open navigation menu"
+          >
             <RiMenu4Fill size={30} />
           </Button>
           <SwipeableDrawer

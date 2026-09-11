@@ -111,6 +111,14 @@ const Contact = () => {
         >
           Submit
         </Button>
+        <Typography
+          variant="body2"
+          className="GrayColor SpaceFont"
+          sx={{ fontSize: "0.75rem", mt: 1 }}
+        >
+          Submitted directly to Getform for delivery to me — used only to
+          reply to your message, not stored or shared elsewhere by this site.
+        </Typography>
       </Grid>
     </Grid>
   );

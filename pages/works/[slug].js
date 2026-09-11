@@ -51,27 +51,33 @@ const ProjectVisitLink = ({ liveUrl, githubUrl }) => {
   }
   if (liveUrl) {
     return (
-      <Link href={liveUrl} target="_blank">
-        <Typography
-          variant="subtitle1"
-          fontSize={FontSizes.para}
-          className="SpaceFont"
-        >
-          Visit Site <RiExternalLinkLine />
-        </Typography>
+      <Link href={liveUrl}>
+        <a target="_blank" rel="noopener noreferrer">
+          <Typography
+            component="span"
+            variant="subtitle1"
+            fontSize={FontSizes.para}
+            className="SpaceFont"
+          >
+            Visit Site <RiExternalLinkLine />
+          </Typography>
+        </a>
       </Link>
     );
   }
   if (githubUrl) {
     return (
-      <Link href={githubUrl} target="_blank">
-        <Typography
-          variant="subtitle1"
-          fontSize={FontSizes.para}
-          className="SpaceFont"
-        >
-          View on GitHub <FaGithub />
-        </Typography>
+      <Link href={githubUrl}>
+        <a target="_blank" rel="noopener noreferrer">
+          <Typography
+            component="span"
+            variant="subtitle1"
+            fontSize={FontSizes.para}
+            className="SpaceFont"
+          >
+            View on GitHub <FaGithub />
+          </Typography>
+        </a>
       </Link>
     );
   }
@@ -108,6 +114,7 @@ const Project = ({ slug }) => {
   } = project;
   const isMobile = useMediaQuery("(max-width:600px)");
   const metaDescription = seoDescription || description;
+  const projectImageUrl = `${SITE.url}${background.src}`;
 
   const creativeWorkJsonLd = {
     "@context": "https://schema.org",
@@ -115,12 +122,27 @@ const Project = ({ slug }) => {
     name: title,
     description: metaDescription,
     url: `${SITE.url}/works/${slug}`,
-    image: `${SITE.url}${background.src}`,
+    image: projectImageUrl,
+    keywords: stack.join(", "),
     author: {
       "@type": "Person",
       name: SITE.name,
-      url: SITE.url,
+      url: `${SITE.url}/`,
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE.url}/` },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: title,
+        item: `${SITE.url}/works/${slug}`,
+      },
+    ],
   };
 
   return (
@@ -128,9 +150,17 @@ const Project = ({ slug }) => {
       title={title}
       description={metaDescription}
       path={`/works/${slug}`}
-      jsonLd={creativeWorkJsonLd}
+      image={projectImageUrl}
+      imageWidth={background.width}
+      imageHeight={background.height}
+      jsonLd={[creativeWorkJsonLd, breadcrumbJsonLd]}
     >
       <Container className={WorkStyles.FullSize} id="GScroll">
+        <Link href="/">
+          <a className="SpaceFont" style={{ display: "inline-block", marginBottom: 16 }}>
+            ← Back to home
+          </a>
+        </Link>
         <Box sx={{ mb: 3 }}>
           <Box
             className={WorkStyles.backgroundProject}

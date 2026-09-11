@@ -18,8 +18,14 @@ const Header = () => {
         className={HeaderStyles.sideBorder}
       >
         <BsGithub size={40} />{" "}
-        <Link href="https://github.com/shikhar13012001">
-          <Typography className="margin-left-short" fontSize={FontSizes.para}>
+        <Link href="https://github.com/shikhar13012001" passHref>
+          <Typography
+            component="a"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="margin-left-short"
+            fontSize={FontSizes.para}
+          >
             <span className="important-word SpaceFont">@shikhar13012001</span>
           </Typography>
         </Link>
