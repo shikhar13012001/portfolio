@@ -10,6 +10,7 @@ import Image from "next/image";
 import React from "react";
 import { FontSizes } from "../../fonts";
 import Flower from "../../public/flower.svg";
+import { SITE } from "../../lib/site-config";
 import ContactStyles from "../../styles/Contact.module.css";
 const StyledTextField = styled(TextField)({
   width: "80%",
@@ -60,6 +61,17 @@ const Contact = () => {
           I&apos;m always open to interesting conversations and opportunities.
           Looking for a SOFTWARE ENGINEER with AI and backend experience?
           Just get in touch.
+        </Typography>
+        <Typography
+          variant="body1"
+          className="SpaceFont"
+          sx={{
+            textAlign: isMobile ? "center" : null,
+            mb: 3,
+          }}
+          fontSize={FontSizes.para}
+        >
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
         </Typography>
       </Grid>
       <Grid

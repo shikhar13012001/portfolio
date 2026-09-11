@@ -19,6 +19,7 @@ const personJsonLd = {
   name: SITE.name,
   url: `${SITE.url}/`,
   image: `${SITE.url}${SITE.ogImage}`,
+  email: SITE.email,
   jobTitle: "Software Engineer",
   worksFor: {
     "@type": "Organization",
