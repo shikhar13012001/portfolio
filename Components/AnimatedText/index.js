@@ -59,6 +59,7 @@ const AnimatedCharacters = (props) => {
   return (
     <Typography
       variant={TypographyVariant}
+      component={props.component}
       className={styles.textAlign}
       fontSize={MobileResponsive}
     >

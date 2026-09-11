@@ -40,6 +40,7 @@ const Contact = () => {
         <Image src={Flower} alt="flower" className={ContactStyles.rotate} />
         <Typography
           variant="h1"
+          component="h2"
           fontSize={FontSizes.Heading}
           sx={{ textAlign: isMobile ? "center" : null }}
         >

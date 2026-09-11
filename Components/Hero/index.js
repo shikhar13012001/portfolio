@@ -4,10 +4,12 @@ import React from "react";
 import styles from "../../styles/Home.module.css";
 import AnimatedText from "../AnimatedText";
 
+// Only one line should render as a real <h1> — the rest are decorative
+// lead-in text sharing the same h1 font styling via the `variant` prop.
 const placeholderText = [
-  { type: "heading1", text: "WELCOME TO THE ", color: "white" },
-  { type: "heading1", text: "WORKSPACE OF", color: "white" },
-  { type: "heading1", text: "SHIKHAR", color: "#7176eb" },
+  { type: "heading1", text: "WELCOME TO THE ", color: "white", component: "p" },
+  { type: "heading1", text: "WORKSPACE OF", color: "white", component: "p" },
+  { type: "heading1", text: "SHIKHAR", color: "#7176eb", component: "h1" },
 ];
 const container = {
   visible: {

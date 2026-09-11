@@ -24,7 +24,7 @@ const About = () => {
       <a id="about"></a>
       <Grid container columns={12} className={AboutStyles.fullSize}>
         <Grid item xs={12} sm={12} md={6} lg={6}>
-          <Typography variant="h1" fontSize={fontSizes}>
+          <Typography variant="h1" component="h2" fontSize={fontSizes}>
             About
           </Typography>
           <br />

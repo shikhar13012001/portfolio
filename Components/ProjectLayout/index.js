@@ -56,6 +56,7 @@ export default function ProjectItemLayout(props) {
         <Link href={href}>
           <Typography
             variant="h1"
+            component="h3"
             fontSize={fontSizes}
             sx={{
               fontStyle: "italic",

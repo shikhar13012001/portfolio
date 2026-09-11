@@ -56,7 +56,7 @@ const PackageDetailsComponent = ({ packageDetail }) => {
           borderRadius: 2,
         }}
       >
-        <Typography variant="h1">{name}</Typography>
+        <Typography variant="h1" component="div">{name}</Typography>
       </Box>
       <Box>
         <Typography
